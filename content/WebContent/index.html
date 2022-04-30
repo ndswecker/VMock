@@ -8,15 +8,21 @@
 <script type="text/javascript" src="MockApp.js"></script>
 </head>
 <body>
-    <h1>Vicious Mockery Pre-Beta</h1>
-    <p>
-        Select an Intro:
-    </p>
-    <p>
-        <button onclick = "populateIntros()"> Populate Intros </button>
+    <div class = "header">
+        <div class = "inner_header">
+            <h1>Vicious Mockery Pre-Beta</h1>
+        </div>
+    </div>
+    <div class = "start">
+        Start Here =>
+        <button onclick = "populateIntros()">Start</button>
         <select id = "introB">
         </select>
-    </p>
+    </div>
+    <div class = "introductions">
+    
+    </div>
+        
     <button onclick = "displayMock()"> Mock</button>
     <p>
         <span class = "output"></span>
