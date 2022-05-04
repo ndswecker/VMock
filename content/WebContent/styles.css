@@ -19,6 +19,15 @@
 	width: 100%;
 	height: 80px;
 	display: block;
+	text-align: center;
+}
+
+.display {
+	margin: auto;
+	width: 50%;
+	height: 80px;
+	padding: 10px;
+	text-align: right;
 }
 
 #startTag {
@@ -31,4 +40,9 @@
 
 #introB {
 	font-size: 1.5em;
+}
+
+#output {
+	font-size: 2.5em;
+	text-align: center;
 }
