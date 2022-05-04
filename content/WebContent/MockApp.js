@@ -140,7 +140,7 @@ function displayMock(){
 	var firstPhrase = randomTextElement(adjA);
 	var secondPhrase = randomTextElement(nounA);
 	output += " " + firstPhrase + " " + secondPhrase;
-	document.querySelector('#output').textContent = output;
+	document.querySelector('.output').textContent = output;
 }
 
 function randomTextElement(array){
