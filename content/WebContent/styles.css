@@ -16,33 +16,61 @@
 }
 
 .start {
-	width: 100%;
+	margin: auto;
+	width: 50%;
 	height: 80px;
 	display: block;
 	text-align: center;
 }
 
-.display {
+.introSlot {
 	margin: auto;
-	width: 50%;
 	height: 80px;
+	width: 50%;
 	padding: 10px;
-	text-align: right;
-}
-
-#startTag {
-	font-size: 2em;
-}
-
-#startButton {
-	font-size: 1.5em;
 }
 
 #introB {
-	font-size: 1.5em;
+    font-size: 1.5em;
+    
+}
+
+.introductions {
+    margin: auto;
+    width: 50%;
+    height: 80px;
+    padding: 10px;
+    position: relative;
+}
+
+.display {
+	margin: auto;
+	height: 80px;
+	padding: 10px;
+	text-align: right;
+	width: 50%;
+	position: relative;
+}
+
+#startTag {
+	font-size: 2.5em;
+}
+
+#startButton {
+	float: right;
+	font-size: 2.5em;
+}
+
+#mockButton {
+	font-size: 2.5em;
 }
 
 .output {
 	font-size: 2.5em;
 	text-align: center;
+}
+
+#copyInsult {
+	float: right;
+	font-size: 2.5em;
 }

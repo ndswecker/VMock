@@ -2,6 +2,8 @@
  * 
  */
 
+let insult = "";
+
 var intrOptionB = [
                    {"text" : "Bend over and take my"},
                    {"text" : "Come a little closer and lick my"},
@@ -240,6 +242,7 @@ function displayMock(){
 	var noun = randomTextElement(nounA);
 	output += " " + adj + " " + adverb + " " + noun;
 	document.querySelector('.output').textContent = output;
+	insult = output;
 }
 
 function randomTextElement(array){
@@ -247,4 +250,8 @@ function randomTextElement(array){
 	var index = Math.floor(Math.random() * max);
 	console.log(index);
 	return array[index].text;
+}
+
+function copyInsult(){
+	navigator.clipboard.writeText(insult);
 }
