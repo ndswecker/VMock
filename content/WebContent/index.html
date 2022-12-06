@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Vicious Mockery</title>
 <link rel = "stylesheet" href = "styles.css"/>
 <script type="text/javascript" src="MockApp.js"></script>
@@ -18,18 +18,16 @@
         <span id = "startButtonSlot">
             <button id = "startButton" onclick = "populateIntros()">Start</button>
         </span>
-        <div class = "introSlot">
-            <select id = "introB">
-        </select>
-        </div>
     </div>
-    <div class = "introductions">
-    
+    <div class = "introSlot">
+        <select name = "introB" id = "introB"></select>
     </div>
-        
-    <button onclick = "displayMock()"> Mock</button>
-    <p>
-        <span class = "output"></span>
-    </p>
+    <div class = "display">
+    <button id = "mockButton" onclick = "displayMock()"> Mock</button>
+        <p></p>
+        <span class = "output">Insult</span>
+        <p></p>
+        <button id = "copyInsult" onclick = "copyInsult()">Copy</button>
+    </div>
 </body>
 </html>
