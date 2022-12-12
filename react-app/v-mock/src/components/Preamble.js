@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import Insult from "../model/Insult";
 import PreambleJSON from "../words/PreambleJSON";
 
 export default function Preamble() {
+    const insult = new Insult();
     const[intro, setIntro] = useState([]);
+
+    
 
     const preambles = PreambleJSON;
     const options = [];
@@ -12,15 +16,17 @@ export default function Preamble() {
         options.push(opt);
     }
 
-    return (<>
-        <p>This will be a Preamble</p>
-        <Select 
-            id="select-preamble"
-            options={options}
-            className="select"
-            name="preambleSelect"
-            onChange={(e) => {setIntro(e)}}
-        />
-    </>);
+    return (
+        <>
+            <p>This will be a Preamble</p>
+            <Select 
+                id="select-preamble"
+                options={options}
+                className="select"
+                name="preambleSelect"
+                onChange={(e) => {setIntro(e)}}
+            />
+        </>
+    );
 }
 
