@@ -11,10 +11,13 @@ export default class Insult {
 
     load() {
         this.insult = JSON.parse(this.storage.getItem(this.key));
-        console.log(`current insult: ${this.insult}`);
+        if (this.insult == null) {
+            this.insult = { };
+        }
     }
 
     dump() {
+        console.log(`this.key: ${this.key} and this.insult: ${this.insult}`);
         this.storage.setItem(this.key, JSON.stringify(this.insult));
     }
 
@@ -32,9 +35,9 @@ export default class Insult {
     }
 
     addProp(prop, value) {
-        if (this.insult.hasOwnProperty(prop)) {
-            console.log(`property ${prop} already exists, will update to new prop`);
-        }
-        this.insult.defineProperty(prop, value);
+        console.log(`attempting to add ${prop} and ${value}`);
+        this.insult[prop] = value;
+        this.dump();
+        console.log(this.insult);
     }
 }

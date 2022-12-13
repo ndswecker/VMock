@@ -4,13 +4,21 @@ import Insult from "../model/Insult";
 import PreambleJSON from "../words/PreambleJSON";
 
 export default function Preamble() {
+    const key = "preamble";
     const[intro, setIntro] = useState();
+    const insult = new Insult();
 
     const preambles = PreambleJSON;
     const options = [];
     for (let x of preambles.types) {
         let opt = {value: x.type, label: x.type};
         options.push(opt);
+    }
+
+    function preambleSet(opt) {
+        setIntro(opt.value);
+        insult.addProp(key, opt.value);
+    
     }
 
     return (
@@ -21,8 +29,8 @@ export default function Preamble() {
                 options={options}
                 className="select"
                 name="preambleSelect"
-                onChange={(e) => {
-                    setIntro(e.value);
+                onChange={(opt) => {
+                    preambleSet(opt);
                 }}
             />
             <p>{intro}</p>
