@@ -4,10 +4,7 @@ import Insult from "../model/Insult";
 import PreambleJSON from "../words/PreambleJSON";
 
 export default function Preamble() {
-    const insult = new Insult();
-    const[intro, setIntro] = useState([]);
-
-    
+    const[intro, setIntro] = useState();
 
     const preambles = PreambleJSON;
     const options = [];
@@ -24,8 +21,11 @@ export default function Preamble() {
                 options={options}
                 className="select"
                 name="preambleSelect"
-                onChange={(e) => {setIntro(e)}}
+                onChange={(e) => {
+                    setIntro(e.value);
+                }}
             />
+            <p>{intro}</p>
         </>
     );
 }
