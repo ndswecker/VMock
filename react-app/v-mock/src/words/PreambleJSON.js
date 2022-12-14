@@ -9,7 +9,7 @@ export const PreambleJSON = [
         ]
     },
     {
-        "type": "attacking",
+        "type": "degrade",
         "content": [
             "Eat shit and die you",
             "How did you become such a",
