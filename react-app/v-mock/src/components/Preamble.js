@@ -26,16 +26,17 @@ export default function Preamble() {
     }
 
     function preambleSet(opt) {
-        setIntro(opt.value);
         insult.addProp(key, opt.value);
-        setIntro(getContent()[0]);
+        const list = getContent()
+        setIntro(list[randomInt(list)]);
     }
 
-    
+    function randomInt(list) {
+        return Math.floor(Math.random() * list.length);
+    }
 
     return (
         <>
-            <p>This will be a Preamble</p>
             <Select 
                 id="select-preamble"
                 options={options}
@@ -45,7 +46,7 @@ export default function Preamble() {
                     preambleSet(opt);
                 }}
             />
-            <p>{intro}</p>
+            <p className="intro">{intro}</p>
         </>
     );
 }
