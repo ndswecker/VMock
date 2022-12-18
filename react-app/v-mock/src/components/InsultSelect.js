@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Preamble from "./Preamble";
+import Intro from "./Intro";
 import InsultResult from "./InsultResult";
 import Insult from "../model/Insult";
 
@@ -8,7 +8,7 @@ export default function InsultSelect() {
 
     return(
         <>
-            <Preamble insult={insult}/>
+            <Intro insult={insult}/>
             <InsultResult insult={insult}/>
         </>
     );

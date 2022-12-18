@@ -1,4 +1,4 @@
-export const PreambleJSON = [
+export const IntroJSON = [
     {
         "type": "self-deprecating",
         "content":  [
