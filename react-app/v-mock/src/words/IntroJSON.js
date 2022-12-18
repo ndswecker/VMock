@@ -1,8 +1,7 @@
-{
-  "types": [
+export const IntroJSON = [
     {
         "type": "self-deprecating",
-        "list":  [
+        "content":  [
             "Bend over and take my",
             "Come a little closer and lick my",
             "Eat my",
@@ -10,8 +9,8 @@
         ]
     },
     {
-        "type": "attacking",
-        "list": [
+        "type": "degrade",
+        "content": [
             "Eat shit and die you",
             "How did you become such a",
             "I thought I smelled a",
@@ -22,7 +21,7 @@
     },
     {
         "type": "threat",
-        "list": [
+        "content": [
             "I will",
             "When I'm done",
             "After I'm through",
@@ -31,4 +30,3 @@
         ]   
     }
 ]
-}
