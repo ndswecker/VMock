@@ -15,7 +15,7 @@ export const IntroJSON = [
             "How did you become such a",
             "I thought I smelled a",
             "Your face looks like a",
-            "Look what the universe just shat out",
+            "Look what the universe just shat out, a",
             "Oh look, its a"
         ]
     },
