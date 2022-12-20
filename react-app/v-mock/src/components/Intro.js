@@ -63,8 +63,17 @@ export default function Intro() {
         return Math.floor(Math.random() * list.length);
     }
 
+    const selectStyles = {
+        control: (styles) => ({...styles, backgroundColor: "white" }),
+        option: (styles, {data, isDisabled, isFocused, isSlected}) => {
+            return {...styles,
+            color: 'black'};
+        }
+    }
+
     return (
         <>
+        <div className="selectables">
             <Select 
                 id = "select-intro"
                 options = {optionsIntro}
@@ -73,6 +82,7 @@ export default function Intro() {
                 onChange = {(opt) => {
                     introSet(opt);
                 }}
+                styles={selectStyles}
             />
             <Select 
                 id = "select-adj"
@@ -82,6 +92,7 @@ export default function Intro() {
                 onChange = {(opt) => {
                     adjSet(opt);
                 }}
+                styles={selectStyles}
             />
             <Select 
                 id = "select-noun"
@@ -91,7 +102,9 @@ export default function Intro() {
                 onChange={(opt) => {
                     nounSet(opt);
                 }}
+                styles={selectStyles}
             />
+            </div>
             <p className="combined-insult">{intro} {adj} {noun}</p>
         </>
     );

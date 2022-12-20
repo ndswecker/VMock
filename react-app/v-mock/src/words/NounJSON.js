@@ -58,7 +58,7 @@ export const NounJSON = [
     },
     {
         "type": "personality",
-        "conent": [
+        "content": [
             "idiot",
             "maniac",
             "lunatic",
@@ -100,7 +100,7 @@ export const NounJSON = [
     },    
     {
         "type": "animal",
-        "conent": [
+        "content": [
             "pony",
             "pig",
             "hog",
@@ -123,7 +123,7 @@ export const NounJSON = [
     },    
     {
         "type": "other",
-        "conent": [
+        "content": [
             "ass-wipe"
         ]
     }    
