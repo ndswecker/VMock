@@ -42,7 +42,7 @@ export default function Intro() {
     }
 
     function introSet(opt) {
-        insult.addProp(key, opt.value);
+        insult.addProp(key, opt.label);
         const list = getContent("intro", IntroJSON);
         setIntro(list[randomInt(list)]);
     }

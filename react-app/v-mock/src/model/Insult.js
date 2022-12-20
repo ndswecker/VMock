@@ -40,4 +40,9 @@ export default class Insult {
         this.dump();
         console.log(this.insult);
     }
+
+    addType(prop, value) {
+        this.insult[prop].type = value;
+        this.dump();
+    }
 }
