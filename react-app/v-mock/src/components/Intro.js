@@ -4,12 +4,19 @@ import Insult from "../model/Insult";
 import { IntroJSON } from "../words/IntroJSON";
 import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
+import { ActionJSON } from "../words/ActionJSON";
+import { SubjectJSON } from "../words/SubjectJSON";
 
 export default function Intro() {
     const key = "intro";
     const[intro, setIntro] = useState();
     const[adj, setAdj] = useState();
     const[noun, setNoun] = useState();
+    const[action, setAction] = useState();
+    const[subject, setSubject] = useState();
+
+    const[isThreat, setIsThreat] = useState(false);
+
     const insult = new Insult();
 
     const optionsIntro = [];
@@ -30,33 +37,66 @@ export default function Intro() {
         optionsNoun.push(opt);
     }
 
-    function getContent(key, value) {
-        let type = insult.insult[key];
-        let contentList = [];
-        for (let t of value) {
-            if (t.type === type){
-                contentList = t.content;
+    const optionsAction = [];
+    for (let x of ActionJSON) {
+        let opt = {value: x.type, label: x.type};
+        optionsAction.push(opt);
+    }
+
+    const optionsSubject = [];
+    for (let x of SubjectJSON) {
+        let opt = {value: x.subject, label: x.subject};
+        optionsSubject.push(opt);
+    }
+
+    function getContent(value, list) {
+        for (let c of list) {
+            if (c.type === value) {
+                return c.content;
             }
         }
-        return contentList;
     }
 
     function introSet(opt) {
-        insult.addProp(key, opt.value);
-        const list = getContent("intro", IntroJSON);
-        setIntro(list[randomInt(list)]);
+        const list = getContent(opt.label, IntroJSON);
+        const targetText = list[randomInt(list)];
+        
+        insult.addType("intro", opt.label, targetText);
+        setIntro(targetText);
+        if (opt.label === "threat") {
+            setIsThreat(true);
+        } else {
+            setIsThreat(false);
+        }
+    }
+
+    function actionSet(opt) {
+        const list = getContent(opt.label, ActionJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("action", opt.label, targetText);
+        setAction(targetText);
+    }
+
+    function subjectSet(opt) {
+        insult.addType("subject", opt.label, opt.label);
+        setSubject(opt.label);
     }
 
     function adjSet(opt) {
-        insult.addProp("adj", opt.value);
-        const list = getContent("adj", AdjJSON);
-        setAdj(list[randomInt(list)]);
+        const list = getContent(opt.label, AdjJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("adj", opt.label, targetText);
+        setAdj(targetText);
     }
 
     function nounSet(opt) {
-        insult.addProp("noun", opt.value);
-        const list = getContent("noun", NounJSON);
-        setNoun(list[randomInt(list)]);
+        const list = getContent(opt.label, NounJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("noun", opt.label, targetText);
+        setNoun(targetText);
     }
 
     function randomInt(list) {
@@ -84,6 +124,29 @@ export default function Intro() {
                 }}
                 styles={selectStyles}
             />
+            {  (isThreat ) ? (
+                <Select 
+                    id = "select-action"
+                    options = {optionsAction}
+                    className = "select"
+                    name = "action-select"
+                    onChange = {(opt) => {
+                        actionSet(opt);
+                    }}
+                    styles={selectStyles}
+                /> ) : null 
+            }
+            { ( isThreat ) ? (
+                <Select 
+                    id = "select-subject"
+                    options = {optionsSubject}
+                    className = "select"
+                    onChange={(opt) => {
+                        subjectSet(opt);
+                    }}
+                    styles={selectStyles}
+                /> ) : null 
+            }
             <Select 
                 id = "select-adj"
                 options = {optionsAdj}
@@ -105,7 +168,7 @@ export default function Intro() {
                 styles={selectStyles}
             />
             </div>
-            <p className="combined-insult">{intro} {adj} {noun}</p>
+            <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p>
         </>
     );
 }

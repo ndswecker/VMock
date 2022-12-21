@@ -3,7 +3,7 @@ export const IntroJSON = [
         "type": "self-deprecating",
         "content":  [
             "Bend over and take my",
-            "Come a little closer and lick my",
+            "Come a little closer and lick",
             "Eat my",
             "Suck my"
         ]
@@ -23,8 +23,8 @@ export const IntroJSON = [
         "type": "threat",
         "content": [
             "I will",
-            "When I'm done",
-            "After I'm through",
+            "No one will know what you are after I",
+            "Just you try and ",
             "But first I'm going to",
             "Why am I always the one who has to"
         ]   
