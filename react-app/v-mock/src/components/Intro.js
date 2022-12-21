@@ -61,10 +61,24 @@ export default function Intro() {
         return contentList;
     }
 
+    function getJSONContent(value, list) {
+        for (let c of list) {
+            if (c.type === value) {
+                return c.content;
+            }
+        }
+    }
+
     function introSet(opt) {
-        insult.addProp(key, opt.label);
-        const list = getContent("intro", IntroJSON);
-        setIntro(list[randomInt(list)]);
+        // insult.addProp(key, opt.label);
+        // const list = getContent("intro", IntroJSON);
+        const list = getJSONContent(opt.label, IntroJSON);
+        console.log(list);
+        const targetText = list[randomInt(list)];
+        console.log(`target: ${targetText}`);
+        
+        insult.addType("intro", opt.label, targetText);
+        setIntro(targetText);
         if (opt.label === "threat") {
             console.log("this is a threat");
             setIsThreat(true);

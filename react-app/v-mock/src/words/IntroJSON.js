@@ -3,7 +3,7 @@ export const IntroJSON = [
         "type": "self-deprecating",
         "content":  [
             "Bend over and take my",
-            "Come a little closer and lick my",
+            "Come a little closer and lick",
             "Eat my",
             "Suck my"
         ]

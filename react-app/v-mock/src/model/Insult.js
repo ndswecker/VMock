@@ -41,8 +41,13 @@ export default class Insult {
         // console.log(this.insult);
     }
 
-    addType(prop, value) {
-        this.insult[prop].type = value;
+    addType(prop, category, text) {
+        console.log(`${prop} ${category} ${text}`);
+        this.insult[prop] = {
+            "type": category,
+            "content": text
+        };
+        console.log(this.insult);
         this.dump();
     }
 }
