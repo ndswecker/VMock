@@ -46,22 +46,10 @@ export default function Intro() {
     const optionsSubject = [];
     for (let x of SubjectJSON) {
         let opt = {value: x.subject, label: x.subject};
-        // console.log(`adding ${opt.label}`);
         optionsSubject.push(opt);
     }
 
-    function getContent(key, value) {
-        let type = insult.insult[key];
-        let contentList = [];
-        for (let t of value) {
-            if (t.type === type){
-                contentList = t.content;
-            }
-        }
-        return contentList;
-    }
-
-    function getJSONContent(value, list) {
+    function getContent(value, list) {
         for (let c of list) {
             if (c.type === value) {
                 return c.content;
@@ -70,17 +58,12 @@ export default function Intro() {
     }
 
     function introSet(opt) {
-        // insult.addProp(key, opt.label);
-        // const list = getContent("intro", IntroJSON);
-        const list = getJSONContent(opt.label, IntroJSON);
-        console.log(list);
+        const list = getContent(opt.label, IntroJSON);
         const targetText = list[randomInt(list)];
-        console.log(`target: ${targetText}`);
         
         insult.addType("intro", opt.label, targetText);
         setIntro(targetText);
         if (opt.label === "threat") {
-            console.log("this is a threat");
             setIsThreat(true);
         } else {
             setIsThreat(false);
@@ -88,29 +71,32 @@ export default function Intro() {
     }
 
     function actionSet(opt) {
-        console.log("onChange action");
-        insult.addProp("action", opt.label);
-        const list = getContent("action", ActionJSON);
-        setAction(list[randomInt(list)]);
+        const list = getContent(opt.label, ActionJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("action", opt.label, targetText);
+        setAction(targetText);
     }
 
     function subjectSet(opt) {
-        console.log("onChange subject");
-        insult.addProp("subject", opt.label);
-        console.log(`subject option ${opt.label}`);
+        insult.addType("subject", opt.label, opt.label);
         setSubject(opt.label);
     }
 
     function adjSet(opt) {
-        insult.addProp("adj", opt.value);
-        const list = getContent("adj", AdjJSON);
-        setAdj(list[randomInt(list)]);
+        const list = getContent(opt.label, AdjJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("adj", opt.label, targetText);
+        setAdj(targetText);
     }
 
     function nounSet(opt) {
-        insult.addProp("noun", opt.value);
-        const list = getContent("noun", NounJSON);
-        setNoun(list[randomInt(list)]);
+        const list = getContent(opt.label, NounJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("noun", opt.label, targetText);
+        setNoun(targetText);
     }
 
     function randomInt(list) {
