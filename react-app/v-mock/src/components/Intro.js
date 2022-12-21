@@ -4,12 +4,19 @@ import Insult from "../model/Insult";
 import { IntroJSON } from "../words/IntroJSON";
 import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
+import { ActionJSON } from "../words/ActionJSON";
+import { SubjectJSON } from "../words/SubjectJSON";
 
 export default function Intro() {
     const key = "intro";
     const[intro, setIntro] = useState();
     const[adj, setAdj] = useState();
     const[noun, setNoun] = useState();
+    const[action, setAction] = useState();
+    const[subject, setSubject] = useState();
+
+    const[isThreat, setIsThreat] = useState(false);
+
     const insult = new Insult();
 
     const optionsIntro = [];
@@ -30,6 +37,19 @@ export default function Intro() {
         optionsNoun.push(opt);
     }
 
+    const optionsAction = [];
+    for (let x of ActionJSON) {
+        let opt = {value: x.type, label: x.type};
+        optionsAction.push(opt);
+    }
+
+    const optionsSubject = [];
+    for (let x of SubjectJSON) {
+        let opt = {value: x.subject, label: x.subject};
+        // console.log(`adding ${opt.label}`);
+        optionsSubject.push(opt);
+    }
+
     function getContent(key, value) {
         let type = insult.insult[key];
         let contentList = [];
@@ -45,6 +65,26 @@ export default function Intro() {
         insult.addProp(key, opt.label);
         const list = getContent("intro", IntroJSON);
         setIntro(list[randomInt(list)]);
+        if (opt.label === "threat") {
+            console.log("this is a threat");
+            setIsThreat(true);
+        } else {
+            setIsThreat(false);
+        }
+    }
+
+    function actionSet(opt) {
+        console.log("onChange action");
+        insult.addProp("action", opt.label);
+        const list = getContent("action", ActionJSON);
+        setAction(list[randomInt(list)]);
+    }
+
+    function subjectSet(opt) {
+        console.log("onChange subject");
+        insult.addProp("subject", opt.label);
+        console.log(`subject option ${opt.label}`);
+        setSubject(opt.label);
     }
 
     function adjSet(opt) {
@@ -84,6 +124,29 @@ export default function Intro() {
                 }}
                 styles={selectStyles}
             />
+            {  (isThreat ) ? (
+                <Select 
+                    id = "select-action"
+                    options = {optionsAction}
+                    className = "select"
+                    name = "action-select"
+                    onChange = {(opt) => {
+                        actionSet(opt);
+                    }}
+                    styles={selectStyles}
+                /> ) : null 
+            }
+            { ( isThreat ) ? (
+                <Select 
+                    id = "select-subject"
+                    options = {optionsSubject}
+                    className = "select"
+                    onChange={(opt) => {
+                        subjectSet(opt);
+                    }}
+                    styles={selectStyles}
+                /> ) : null 
+            }
             <Select 
                 id = "select-adj"
                 options = {optionsAdj}
@@ -105,7 +168,7 @@ export default function Intro() {
                 styles={selectStyles}
             />
             </div>
-            <p className="combined-insult">{intro} {adj} {noun}</p>
+            <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p>
         </>
     );
 }

@@ -17,7 +17,7 @@ export default class Insult {
     }
 
     dump() {
-        console.log(`this.key: ${this.key} and this.insult: ${this.insult}`);
+        // console.log(`this.key: ${this.key} and this.insult: ${this.insult}`);
         this.storage.setItem(this.key, JSON.stringify(this.insult));
     }
 
@@ -35,10 +35,10 @@ export default class Insult {
     }
 
     addProp(prop, value) {
-        console.log(`attempting to add ${prop} and ${value}`);
+        // console.log(`attempting to add ${prop} and ${value}`);
         this.insult[prop] = value;
         this.dump();
-        console.log(this.insult);
+        // console.log(this.insult);
     }
 
     addType(prop, value) {
