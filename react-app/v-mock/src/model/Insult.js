@@ -1,3 +1,4 @@
+import { isOutputType } from "graphql";
 import React, { useState } from "react";
 
 export default class Insult {
@@ -26,6 +27,11 @@ export default class Insult {
         this.storage.removeItem(this.key);
     }
 
+    reset() {
+        this.delete();
+        this.load();
+    }
+
     isValid() {
         if (this.insult == null) {
             return false;
@@ -49,5 +55,27 @@ export default class Insult {
         };
         console.log(this.insult);
         this.dump();
+    }
+
+    toString() {
+        let currentInsult = JSON.parse(this.storage.getItem(this.key));
+        let introType = currentInsult.intro.type;
+        let intro = "";
+        let action = "";
+        let subject = "";
+        let adj = "";
+        let noun = "";
+
+        if (introType === "threat") {
+            intro = currentInsult.intro.content;
+            action = currentInsult.action.content;
+            subject = currentInsult.subject.content;
+            adj = currentInsult.adj.content;
+            noun = currentInsult.noun.content;
+
+            return `${intro} ${action} ${subject} ${adj} ${noun}`
+        }
+
+        return JSON.stringify(intro);
     }
 }

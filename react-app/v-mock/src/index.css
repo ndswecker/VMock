@@ -19,5 +19,15 @@ code {
 
 .selectables {
   margin-top: 20px;
-  
+}
+
+.control-buttons {
+  margin: 10px;
+  width: 75%;
+}
+
+.control-button {
+  width: 35%;
+  display: inline-block;
+  font-size: 1em;
 }

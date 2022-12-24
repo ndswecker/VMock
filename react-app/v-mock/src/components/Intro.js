@@ -16,6 +16,7 @@ export default function Intro() {
     const[subject, setSubject] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
+    const[finalInsult, setFinalInsult] = useState("");
 
     const insult = new Insult();
 
@@ -103,6 +104,16 @@ export default function Intro() {
         return Math.floor(Math.random() * list.length);
     }
 
+    function insultOutput() {
+        setFinalInsult(insult.toString());
+        console.log(insult.toString());
+    }
+
+    function resetInsult() {
+        insult.reset();
+        setFinalInsult("");
+    }
+
     const selectStyles = {
         control: (styles) => ({...styles, backgroundColor: "white" }),
         option: (styles, {data, isDisabled, isFocused, isSlected}) => {
@@ -168,7 +179,23 @@ export default function Intro() {
                 styles={selectStyles}
             />
             </div>
-            <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p>
+            <div className="control-buttons">
+                <button 
+                    id = "button-mock"
+                    className="control-button"
+                    onClick={insultOutput}>
+                        MOCK
+                </button>
+                <button
+                    id = "button-reset"
+                    className="control-button"
+                    onClick={resetInsult}>
+                        RESET
+                </button>    
+            </div>
+            
+            {/* <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p> */}
+            <p>{finalInsult}</p>
         </>
     );
 }
