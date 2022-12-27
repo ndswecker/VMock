@@ -159,6 +159,7 @@ export default function Intro() {
                 }}
                 styles={selectStyles}
             />
+
             { ( isDegrade ) ? (
                 <Degrade 
                     optionsAdj={optionsAdj} optionsNoun={optionsNoun}
@@ -175,8 +176,6 @@ export default function Intro() {
                 />
             ) : null
             }
-        
-
             
             </div>
             <div className="control-buttons">
@@ -193,8 +192,7 @@ export default function Intro() {
                         RESET
                 </button>    
             </div>
-            
-            {/* <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p> */}
+
             <p>{finalInsult}</p>
         </>
     );
