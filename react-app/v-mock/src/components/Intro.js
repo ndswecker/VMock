@@ -6,6 +6,9 @@ import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
 import { ActionJSON } from "../words/ActionJSON";
 import { SubjectJSON } from "../words/SubjectJSON";
+import { VerbJSON } from "../words/VerbJSON";
+import Degrade from "./Degrade";
+import Threat from "./Threat";
 
 export default function Intro() {
     const key = "intro";
@@ -14,8 +17,11 @@ export default function Intro() {
     const[noun, setNoun] = useState();
     const[action, setAction] = useState();
     const[subject, setSubject] = useState();
+    const[verb, setVerb] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
+    const[isDegrade, setIsDegrade] = useState(false);
+    const[finalInsult, setFinalInsult] = useState("");
 
     const insult = new Insult();
 
@@ -49,6 +55,12 @@ export default function Intro() {
         optionsSubject.push(opt);
     }
 
+    const optionsVerb = [];
+    for (let x of VerbJSON) {
+        let opt = {value: x.type, label: x.type};
+        optionsVerb.push(opt);
+    }
+
     function getContent(value, list) {
         for (let c of list) {
             if (c.type === value) {
@@ -67,6 +79,11 @@ export default function Intro() {
             setIsThreat(true);
         } else {
             setIsThreat(false);
+        }
+        if (opt.label === "degrade") {
+            setIsDegrade(true);
+        } else {
+            setIsDegrade(false);
         }
     }
 
@@ -99,8 +116,26 @@ export default function Intro() {
         setNoun(targetText);
     }
 
+    function verbSet(opt) {
+        const list = getContent(opt.label, VerbJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("verb", opt.label, targetText);
+        setVerb(targetText);
+    }
+
     function randomInt(list) {
         return Math.floor(Math.random() * list.length);
+    }
+
+    function insultOutput() {
+        setFinalInsult(insult.toString());
+        console.log(insult.toString());
+    }
+
+    function resetInsult() {
+        insult.reset();
+        setFinalInsult("");
     }
 
     const selectStyles = {
@@ -124,51 +159,41 @@ export default function Intro() {
                 }}
                 styles={selectStyles}
             />
-            {  (isThreat ) ? (
-                <Select 
-                    id = "select-action"
-                    options = {optionsAction}
-                    className = "select"
-                    name = "action-select"
-                    onChange = {(opt) => {
-                        actionSet(opt);
-                    }}
-                    styles={selectStyles}
-                /> ) : null 
+
+            { ( isDegrade ) ? (
+                <Degrade 
+                    optionsAdj={optionsAdj} optionsNoun={optionsNoun}
+                    adjSet={adjSet} nounSet={nounSet}
+                    selectStyles={selectStyles}
+                />
+            ) : null
             }
-            { ( isThreat ) ? (
-                <Select 
-                    id = "select-subject"
-                    options = {optionsSubject}
-                    className = "select"
-                    onChange={(opt) => {
-                        subjectSet(opt);
-                    }}
-                    styles={selectStyles}
-                /> ) : null 
+            { (isThreat) ? (
+                <Threat 
+                    optionsAction={optionsAction} optionsSubject={optionsSubject} optionsAdj={optionsAdj} optionsNoun={optionsNoun}
+                    actionSet={actionSet} subjectSet={subjectSet} adjSet={adjSet} nounSet={nounSet}
+                    selectStyles={selectStyles}
+                />
+            ) : null
             }
-            <Select 
-                id = "select-adj"
-                options = {optionsAdj}
-                className =" select"
-                name = "select-adj"
-                onChange = {(opt) => {
-                    adjSet(opt);
-                }}
-                styles={selectStyles}
-            />
-            <Select 
-                id = "select-noun"
-                options = {optionsNoun}
-                className = "select"
-                name = "select-noun"
-                onChange={(opt) => {
-                    nounSet(opt);
-                }}
-                styles={selectStyles}
-            />
+            
             </div>
-            <p className="combined-insult">{intro} {action} {subject} {adj} {noun}</p>
+            <div className="control-buttons">
+                <button 
+                    id = "button-mock"
+                    className="control-button"
+                    onClick={insultOutput}>
+                        MOCK
+                </button>
+                <button
+                    id = "button-reset"
+                    className="control-button"
+                    onClick={resetInsult}>
+                        RESET
+                </button>    
+            </div>
+
+            <p>{finalInsult}</p>
         </>
     );
 }

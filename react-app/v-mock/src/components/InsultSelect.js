@@ -4,12 +4,11 @@ import InsultResult from "./InsultResult";
 import Insult from "../model/Insult";
 
 export default function InsultSelect() {
-    const [insult, setInsult] = useState( () => {new Insult()});
+    // const [insult, setInsult] = useState( () => {new Insult()});
 
     return(
         <>
-            <Intro insult={insult}/>
-            <InsultResult insult={insult}/>
+            <Intro />
         </>
     );
 }
