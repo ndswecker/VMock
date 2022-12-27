@@ -72,8 +72,12 @@ export default class Insult {
             subject = currentInsult.subject.content;
             adj = currentInsult.adj.content;
             noun = currentInsult.noun.content;
-
             return `${intro} ${action} ${subject} ${adj} ${noun}`
+        }else if (introType === "degrade") {
+            intro = currentInsult.intro.content;
+            adj = currentInsult.adj.content;
+            noun = currentInsult.noun.content;
+            return `${intro} ${adj} ${noun}`;
         }
 
         return JSON.stringify(intro);

@@ -6,6 +6,8 @@ import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
 import { ActionJSON } from "../words/ActionJSON";
 import { SubjectJSON } from "../words/SubjectJSON";
+import { VerbJSON } from "../words/VerbJSON";
+import Degrade from "./Degrade";
 
 export default function Intro() {
     const key = "intro";
@@ -14,8 +16,10 @@ export default function Intro() {
     const[noun, setNoun] = useState();
     const[action, setAction] = useState();
     const[subject, setSubject] = useState();
+    const[verb, setVerb] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
+    const[isDegrade, setIsDegrade] = useState(false);
     const[finalInsult, setFinalInsult] = useState("");
 
     const insult = new Insult();
@@ -50,6 +54,12 @@ export default function Intro() {
         optionsSubject.push(opt);
     }
 
+    const optionsVerb = [];
+    for (let x of VerbJSON) {
+        let opt = {value: x.type, label: x.type};
+        optionsVerb.push(opt);
+    }
+
     function getContent(value, list) {
         for (let c of list) {
             if (c.type === value) {
@@ -68,6 +78,11 @@ export default function Intro() {
             setIsThreat(true);
         } else {
             setIsThreat(false);
+        }
+        if (opt.label === "degrade") {
+            setIsDegrade(true);
+        } else {
+            setIsDegrade(false);
         }
     }
 
@@ -100,6 +115,14 @@ export default function Intro() {
         setNoun(targetText);
     }
 
+    function verbSet(opt) {
+        const list = getContent(opt.label, VerbJSON);
+        const targetText = list[randomInt(list)];
+
+        insult.addType("verb", opt.label, targetText);
+        setVerb(targetText);
+    }
+
     function randomInt(list) {
         return Math.floor(Math.random() * list.length);
     }
@@ -124,6 +147,14 @@ export default function Intro() {
 
     return (
         <>
+        { ( isDegrade ) ? (
+            <Degrade 
+                optionsIntro={optionsIntro} optionsVerb={optionsVerb} optionsAdj={optionsAdj}
+                introSet={introSet} adjSet={adjSet} verbSet={verbSet}
+                selectStyles={selectStyles}
+            />
+        ) : null
+        }
         <div className="selectables">
             <Select 
                 id = "select-intro"
