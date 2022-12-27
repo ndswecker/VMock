@@ -8,6 +8,7 @@ import { ActionJSON } from "../words/ActionJSON";
 import { SubjectJSON } from "../words/SubjectJSON";
 import { VerbJSON } from "../words/VerbJSON";
 import Degrade from "./Degrade";
+import Threat from "./Threat";
 
 export default function Intro() {
     const key = "intro";
@@ -147,14 +148,6 @@ export default function Intro() {
 
     return (
         <>
-        { ( isDegrade ) ? (
-            <Degrade 
-                optionsIntro={optionsIntro} optionsVerb={optionsVerb} optionsAdj={optionsAdj}
-                introSet={introSet} adjSet={adjSet} verbSet={verbSet}
-                selectStyles={selectStyles}
-            />
-        ) : null
-        }
         <div className="selectables">
             <Select 
                 id = "select-intro"
@@ -166,49 +159,25 @@ export default function Intro() {
                 }}
                 styles={selectStyles}
             />
-            {  (isThreat ) ? (
-                <Select 
-                    id = "select-action"
-                    options = {optionsAction}
-                    className = "select"
-                    name = "action-select"
-                    onChange = {(opt) => {
-                        actionSet(opt);
-                    }}
-                    styles={selectStyles}
-                /> ) : null 
+            { ( isDegrade ) ? (
+                <Degrade 
+                    optionsAdj={optionsAdj} optionsNoun={optionsNoun}
+                    adjSet={adjSet} nounSet={nounSet}
+                    selectStyles={selectStyles}
+                />
+            ) : null
             }
-            { ( isThreat ) ? (
-                <Select 
-                    id = "select-subject"
-                    options = {optionsSubject}
-                    className = "select"
-                    onChange={(opt) => {
-                        subjectSet(opt);
-                    }}
-                    styles={selectStyles}
-                /> ) : null 
+            { (isThreat) ? (
+                <Threat 
+                    optionsAction={optionsAction} optionsSubject={optionsSubject} optionsAdj={optionsAdj} optionsNoun={optionsNoun}
+                    actionSet={actionSet} subjectSet={subjectSet} adjSet={adjSet} nounSet={nounSet}
+                    selectStyles={selectStyles}
+                />
+            ) : null
             }
-            <Select 
-                id = "select-adj"
-                options = {optionsAdj}
-                className =" select"
-                name = "select-adj"
-                onChange = {(opt) => {
-                    adjSet(opt);
-                }}
-                styles={selectStyles}
-            />
-            <Select 
-                id = "select-noun"
-                options = {optionsNoun}
-                className = "select"
-                name = "select-noun"
-                onChange={(opt) => {
-                    nounSet(opt);
-                }}
-                styles={selectStyles}
-            />
+        
+
+            
             </div>
             <div className="control-buttons">
                 <button 
