@@ -22,7 +22,7 @@ export const VerbJSON = [
             "shrieking",
             "screaming",
             "hyenna-laughing",
-            "burn"
+            "burning"
         ],
     },
     {
