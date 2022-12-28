@@ -135,6 +135,8 @@ export default function Intro() {
 
     function resetInsult() {
         insult.reset();
+        setIsDegrade(false);
+        setIsThreat(false);
         setFinalInsult("");
     }
 
