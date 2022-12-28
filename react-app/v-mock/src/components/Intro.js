@@ -18,6 +18,7 @@ export default function Intro() {
     const[action, setAction] = useState();
     const[subject, setSubject] = useState();
     const[verb, setVerb] = useState();
+    const[adj_verb, setAdj_verb] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
     const[isDegrade, setIsDegrade] = useState(false);
@@ -122,6 +123,18 @@ export default function Intro() {
 
         insult.addType("verb", opt.label, targetText);
         setVerb(targetText);
+    }
+
+    function adj_verbSet(optAdj, optVerb) {
+        const listAdj = getContent(optAdj.label, AdjJSON);
+        const targetTextAdj = listAdj[randomInt(listAdj)];
+        const listVerb = getContent(optVerb.label, VerbJSON);
+        const targetTextVerb = listVerb[randomInt(listVerb)];
+        
+        const comboType = `${optAdj.label}-${optVerb.label}`;
+        const comboText = `${targetTextAdj}-${targetTextVerb}`;
+        insult.addType("adj_verb", comboType, comboText);
+        setAdj_verb(comboText);
     }
 
     function randomInt(list) {
