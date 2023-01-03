@@ -81,7 +81,7 @@ export default function Intro() {
         } else {
             setIsThreat(false);
         }
-        if (opt.label === "degrade") {
+        if (opt.label === "degrade" || opt.label === "self-deprecating") {
             setIsDegrade(true);
         } else {
             setIsDegrade(false);
