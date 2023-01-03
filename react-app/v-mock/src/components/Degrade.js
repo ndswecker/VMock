@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Select from "react-select";
 
 export default function Degrade 
-({optionsAdj, optionsNoun,
-adjSet, nounSet,
+({optionsAdj, optionsNoun, optionsVerb,
+adjSet, verbSet, nounSet,
 selectStyles}) {
     return (
         <>
@@ -15,6 +15,16 @@ selectStyles}) {
                 name = "adj-select"
                 onChange = {(opt) => {
                     adjSet(opt);
+                }}
+                styles={selectStyles}
+            />
+            <Select 
+                id = "select-verb"
+                options = {optionsAdj}
+                className = "select"
+                name = "select-verb"
+                onChange={(opt) => {
+                    verbSet(opt);
                 }}
                 styles={selectStyles}
             />

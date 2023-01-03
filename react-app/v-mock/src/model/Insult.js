@@ -65,6 +65,7 @@ export default class Insult {
         let subject = "";
         let adj = "";
         let noun = "";
+        let verb = "";
 
         if (introType === "threat") {
             intro = currentInsult.intro.content;
@@ -73,11 +74,12 @@ export default class Insult {
             adj = currentInsult.adj.content;
             noun = currentInsult.noun.content;
             return `${intro} ${action} ${subject} ${adj} ${noun}`
-        }else if (introType === "degrade") {
+        }else if (introType === "degrade" || introType === "self-deprecating") {
             intro = currentInsult.intro.content;
             adj = currentInsult.adj.content;
+            verb = currentInsult.verb.content;
             noun = currentInsult.noun.content;
-            return `${intro} ${adj} ${noun}`;
+            return `${intro} ${adj} ${verb} ${noun}`;
         }
 
         return JSON.stringify(intro);

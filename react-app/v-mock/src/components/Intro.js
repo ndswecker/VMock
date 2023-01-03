@@ -18,6 +18,7 @@ export default function Intro() {
     const[action, setAction] = useState();
     const[subject, setSubject] = useState();
     const[verb, setVerb] = useState();
+    const[adj_verb, setAdj_verb] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
     const[isDegrade, setIsDegrade] = useState(false);
@@ -80,7 +81,7 @@ export default function Intro() {
         } else {
             setIsThreat(false);
         }
-        if (opt.label === "degrade") {
+        if (opt.label === "degrade" || opt.label === "self-deprecating") {
             setIsDegrade(true);
         } else {
             setIsDegrade(false);
@@ -165,7 +166,7 @@ export default function Intro() {
             { ( isDegrade ) ? (
                 <Degrade 
                     optionsAdj={optionsAdj} optionsNoun={optionsNoun}
-                    adjSet={adjSet} nounSet={nounSet}
+                    adjSet={adjSet} nounSet={nounSet} verbSet={verbSet}
                     selectStyles={selectStyles}
                 />
             ) : null
