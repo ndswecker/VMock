@@ -125,18 +125,6 @@ export default function Intro() {
         setVerb(targetText);
     }
 
-    function adj_verbSet(optAdj, optVerb) {
-        const listAdj = getContent(optAdj.label, AdjJSON);
-        const targetTextAdj = listAdj[randomInt(listAdj)];
-        const listVerb = getContent(optVerb.label, VerbJSON);
-        const targetTextVerb = listVerb[randomInt(listVerb)];
-        
-        const comboType = `${optAdj.label}-${optVerb.label}`;
-        const comboText = `${targetTextAdj}-${targetTextVerb}`;
-        insult.addType("adj_verb", comboType, comboText);
-        setAdj_verb(comboText);
-    }
-
     function randomInt(list) {
         return Math.floor(Math.random() * list.length);
     }
@@ -178,7 +166,7 @@ export default function Intro() {
             { ( isDegrade ) ? (
                 <Degrade 
                     optionsAdj={optionsAdj} optionsNoun={optionsNoun}
-                    adjSet={adjSet} nounSet={nounSet}
+                    adjSet={adjSet} nounSet={nounSet} verbSet={verbSet}
                     selectStyles={selectStyles}
                 />
             ) : null
