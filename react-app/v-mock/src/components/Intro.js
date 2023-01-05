@@ -12,13 +12,13 @@ import Threat from "./Threat";
 
 export default function Intro() {
     const key = "intro";
-    const[intro, setIntro] = useState();
-    const[adj, setAdj] = useState();
-    const[noun, setNoun] = useState();
-    const[action, setAction] = useState();
-    const[subject, setSubject] = useState();
-    const[verb, setVerb] = useState();
-    const[adj_verb, setAdj_verb] = useState();
+    // const[intro, setIntro] = useState();
+    // const[adj, setAdj] = useState();
+    // const[noun, setNoun] = useState();
+    // const[action, setAction] = useState();
+    // const[subject, setSubject] = useState();
+    // const[verb, setVerb] = useState();
+    // const[adj_verb, setAdj_verb] = useState();
 
     const[isThreat, setIsThreat] = useState(false);
     const[isDegrade, setIsDegrade] = useState(false);
@@ -28,7 +28,7 @@ export default function Intro() {
 
     const optionsIntro = [];
     for (let x of IntroJSON) {
-        let opt = {value: x.type, label: x.type};
+        let opt = {value: "intro", label: x.type};
         optionsIntro.push(opt);
     }
 
@@ -46,7 +46,7 @@ export default function Intro() {
 
     const optionsAction = [];
     for (let x of ActionJSON) {
-        let opt = {value: x.type, label: x.type};
+        let opt = {value: "action", label: x.type};
         optionsAction.push(opt);
     }
 
@@ -75,7 +75,7 @@ export default function Intro() {
         const targetText = list[randomInt(list)];
         
         insult.addType("intro", opt.label, targetText);
-        setIntro(targetText);
+        // setIntro(targetText);
         if (opt.label === "threat") {
             setIsThreat(true);
         } else {
@@ -93,12 +93,12 @@ export default function Intro() {
         const targetText = list[randomInt(list)];
 
         insult.addType("action", opt.label, targetText);
-        setAction(targetText);
+        // setAction(targetText);
     }
 
     function subjectSet(opt) {
         insult.addType("subject", opt.label, opt.label);
-        setSubject(opt.label);
+        // setSubject(opt.label);
     }
 
     function adjSet(opt) {
@@ -106,7 +106,7 @@ export default function Intro() {
         const targetText = list[randomInt(list)];
 
         insult.addType("adj", opt.label, targetText);
-        setAdj(targetText);
+        // setAdj(targetText);
     }
 
     function nounSet(opt) {
@@ -114,7 +114,7 @@ export default function Intro() {
         const targetText = list[randomInt(list)];
 
         insult.addType("noun", opt.label, targetText);
-        setNoun(targetText);
+        // setNoun(targetText);
     }
 
     function verbSet(opt) {
@@ -122,7 +122,27 @@ export default function Intro() {
         const targetText = list[randomInt(list)];
 
         insult.addType("verb", opt.label, targetText);
-        setVerb(targetText);
+        // setVerb(targetText);
+    }
+
+    function wordSet(opt, wordJSON) {
+        const list = getContent(opt.label, wordJSON);
+        const content = list[randomInt(list)];
+
+        insult.addType(opt.value, opt.label, content);
+    }
+
+    function introTypeSet(opt) {
+        if (opt.label === "threat") {
+            setIsThreat(true);
+        } else {
+            setIsThreat(false);
+        }
+        if (opt.label === "degrade" || opt.label === "self-deprecating") {
+            setIsDegrade(true);
+        } else {
+            setIsDegrade(false);
+        }
     }
 
     function randomInt(list) {
@@ -174,8 +194,8 @@ export default function Intro() {
             { (isThreat) ? (
                 <Threat 
                     optionsAction={optionsAction} optionsSubject={optionsSubject} optionsAdj={optionsAdj} optionsNoun={optionsNoun}
-                    actionSet={actionSet} subjectSet={subjectSet} adjSet={adjSet} nounSet={nounSet}
                     selectStyles={selectStyles}
+                    wordSet={wordSet} subjectSet={subjectSet}
                 />
             ) : null
             }

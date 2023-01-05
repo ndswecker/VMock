@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { ActionJSON } from "../words/ActionJSON";
+import { AdjJSON } from "../words/AdjJSON";
+import { NounJSON } from "../words/NounJSON";
 
-export default function Threat 
-({ optionsAdj, optionsSubject, optionsNoun, optionsAction,
-adjSet, subjectSet, nounSet, actionSet,
-selectStyles }) {
+export default function Threat ({ 
+    optionsAdj,
+    optionsSubject,
+    optionsNoun, 
+    optionsAction,
+    subjectSet, 
+    wordSet,
+    selectStyles
+ }) {
     return (
         <>
         <div className="selectables">
@@ -14,7 +22,8 @@ selectStyles }) {
                 className = "select"
                 name = "action-select"
                 onChange = {(opt) => {
-                    actionSet(opt);
+                    // actionSet(opt);
+                    wordSet(opt, ActionJSON);
                 }}
                 styles={selectStyles}
             />
@@ -34,7 +43,7 @@ selectStyles }) {
                 className = "select"
                 name = "adj-select"
                 onChange = {(opt) => {
-                    adjSet(opt);
+                    wordSet(opt, AdjJSON);
                 }}
                 styles={selectStyles}
             />
@@ -44,7 +53,7 @@ selectStyles }) {
                 className = "select"
                 name = "noun-select"
                 onChange = {(opt) => {
-                    nounSet(opt);
+                    wordSet(opt, NounJSON);
                 }}
                 styles={selectStyles}
             />
