@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Select from "react-select";
 import Insult from "../model/Insult";
 import { IntroJSON } from "../words/IntroJSON";
@@ -34,13 +34,13 @@ export default function Intro() {
 
     const optionsAdj = [];
     for (let x of AdjJSON) {
-        let opt = {value: x.type, label: x.type};
+        let opt = {value: "adj", label: x.type};
         optionsAdj.push(opt);
     }
 
     const optionsNoun = [];
     for (let x of NounJSON) {
-        let opt = {value: x.type, label: x.type};
+        let opt = {value: "noun", label: x.type};
         optionsNoun.push(opt);
     }
 
@@ -52,13 +52,13 @@ export default function Intro() {
 
     const optionsSubject = [];
     for (let x of SubjectJSON) {
-        let opt = {value: x.subject, label: x.subject};
+        let opt = {value: "subject", label: x.subject};
         optionsSubject.push(opt);
     }
 
     const optionsVerb = [];
     for (let x of VerbJSON) {
-        let opt = {value: x.type, label: x.type};
+        let opt = {value: "verb", label: x.type};
         optionsVerb.push(opt);
     }
 
@@ -171,12 +171,13 @@ export default function Intro() {
 
     return (
         <>
+
         <div className="selectables">
             <Select 
                 id = "select-intro"
                 options = {optionsIntro}
                 className = "select"
-                name = "intro-select"
+                name = "introSelect"
                 onChange = {(opt) => {
                     introSet(opt);
                 }}
@@ -185,8 +186,8 @@ export default function Intro() {
 
             { ( isDegrade ) ? (
                 <Degrade 
-                    optionsAdj={optionsAdj} optionsNoun={optionsNoun}
-                    adjSet={adjSet} nounSet={nounSet} verbSet={verbSet}
+                    optionsAdj={optionsAdj} optionsNoun={optionsNoun} optionsVerb={optionsVerb}
+                    wordSet={wordSet}
                     selectStyles={selectStyles}
                 />
             ) : null

@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import { AdjJSON } from "../words/AdjJSON";
+import { NounJSON } from "../words/NounJSON";
+import { VerbJSON } from "../words/VerbJSON";
 
-export default function Degrade 
-({optionsAdj, optionsNoun, optionsVerb,
-adjSet, verbSet, nounSet,
-selectStyles}) {
+export default function Degrade ({
+    optionsAdj, 
+    optionsNoun, 
+    optionsVerb,
+    wordSet,
+    selectStyles}) {
     return (
         <>
         <div className="selectables">
@@ -14,17 +19,17 @@ selectStyles}) {
                 className = "select"
                 name = "adj-select"
                 onChange = {(opt) => {
-                    adjSet(opt);
+                    wordSet(opt, AdjJSON);
                 }}
                 styles={selectStyles}
             />
             <Select 
                 id = "select-verb"
-                options = {optionsAdj}
+                options = {optionsVerb}
                 className = "select"
                 name = "select-verb"
                 onChange={(opt) => {
-                    verbSet(opt);
+                    wordSet(opt, VerbJSON);
                 }}
                 styles={selectStyles}
             />
@@ -34,7 +39,7 @@ selectStyles}) {
                 className = "select"
                 name = "noun-select"
                 onChange = {(opt) => {
-                    nounSet(opt);
+                    wordSet(opt, NounJSON);
                 }}
                 styles={selectStyles}
             />

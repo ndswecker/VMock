@@ -22,7 +22,6 @@ export default function Threat ({
                 className = "select"
                 name = "action-select"
                 onChange = {(opt) => {
-                    // actionSet(opt);
                     wordSet(opt, ActionJSON);
                 }}
                 styles={selectStyles}
