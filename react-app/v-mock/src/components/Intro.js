@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import Select from "react-select";
 import Insult from "../model/Insult";
+import DegradeInsult from "../model/DegradeInsult";
+
 import { IntroJSON } from "../words/IntroJSON";
 import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
@@ -24,7 +26,7 @@ export default function Intro() {
     const[isDegrade, setIsDegrade] = useState(false);
     const[finalInsult, setFinalInsult] = useState("");
 
-    const insult = new Insult();
+    let insult = new Insult();
 
     const optionsIntro = [];
     for (let x of IntroJSON) {
@@ -71,6 +73,7 @@ export default function Intro() {
     }
 
     function introSet(opt) {
+        insult = new DegradeInsult();
         const list = getContent(opt.label, IntroJSON);
         const targetText = list[randomInt(list)];
         
