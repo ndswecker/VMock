@@ -4,9 +4,7 @@ import { AdjJSON } from "../words/AdjJSON";
 import { NounJSON } from "../words/NounJSON";
 import { VerbJSON } from "../words/VerbJSON";
 
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+
 
 export default function Degrade ({
     optionsAdj, 
