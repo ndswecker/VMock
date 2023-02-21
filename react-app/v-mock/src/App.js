@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 import InsultSelect from "./components/InsultSelect";
-import Monster from "./components/Hospice/Monster";
+import MonsterStack from "./components/Hospice/MonsterStack";
 
 function App() {
 
@@ -17,7 +17,7 @@ function App() {
           rel="noopener noreferrer"
         >Learn Vicious Mockery</a>
         <InsultSelect />
-        <Monster />
+        <MonsterStack />
       </header>
       
     </div>

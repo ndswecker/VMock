@@ -1,4 +1,4 @@
-export const Monster = [
+export const MonsterJSON = [
     {
         "name": "Stairs, not the stairs",
         "id": 1,
