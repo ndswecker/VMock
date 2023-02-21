@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.select {
+  width: 33%;
+  display: inline-block;
+}
+
+.selectables {
+  width: 100%;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.control-buttons {
+  margin: 10px;
+  width: 75%;
+}
+
+.control-button {
+  width: 35%;
+  display: inline-block;
+  font-size: 1em;
+}
