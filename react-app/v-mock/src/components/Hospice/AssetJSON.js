@@ -166,5 +166,75 @@ export const AssetJSON = [
             where the pancreas makes little to no insulin. No known cure.",
         "benefit": "-X to grandparent vs any medical condition.",
         "source": "Mayo Clinic 2023"
+    }, 
+    {
+        "name": "HIV",
+        "id": 19,
+        "type": "Medical Condition",
+        "text": "HIV attacks cells in the body’s immune system \
+        called CD4 cells and, if untreated, gradually destroys the \
+        body’s ability to fight infection and certain cancers. \
+        CDC estimates that nearly 1.2 million people in the \
+        United States 13 years and older were living with \
+        HIV at the end of 2019",
+        "source": "CDC 2023"
+    }, 
+    {
+        "name": "Alcoholism? Its just 4 glasses each night",
+        "id": 20,
+        "type": "Lifestyle & Medical Condition",
+        "text": "",
+        "benefit": "-X to LGBTQ grandparent",
+        "source": "CDC "
+    }, 
+    {
+        "name": "Stop Smoking Grandma!",
+        "id": 21,
+        "type": "Lifestyle & Medical Condition",
+        "text": "Smoking is a major cause of heart disease and stroke \
+            and causes 1 in every 4 deaths from these conditions",
+        "benefit": "-X against Cardiovascular Disease and Stroke",
+        "source": "CDC 2023 Heart Disease and Stroke"
+    }, 
+    {
+        "name": "LGBTQ Grandparent",
+        "id": 22,
+        "type": "Identity",
+        "text": "LGBT elders face discrimination in health care, \
+            and as a result face higher rates of chronic conditions",
+        "benefit": "-X against Cancer, Mental Health, and Cardiovascular Disease",
+        "source": "Cameron 2017"
+    }, 
+    {
+        "name": "First-generation Asian American Grandparent",
+        "id": 23,
+        "type": "Identity",
+        "text": "Asian American Immigrants (AIs) are not monolithic. Depending on \
+            country of origin, education, and when then immigrated, AIs \
+            experience discrimination differently",
+        "benefit": "-X against Medical Professionals. Limitted English",
+        "source": "Nandan 2007"
+    }, 
+    {
+        "name": "African American Grandparent",
+        "id": 24,
+        "type": "Identity",
+        "text": "Black middle-aged adults tend to provide more support to their \
+            aging parents than while middle-aged adults",
+        "benefit": ["+X against any Activities of Daily Living",
+            "-X against all medical contidtions",
+            "-X against Dementia related Monsters"],
+        "source": "Kornblith 2022"
+    }, 
+    {
+        "name": "Veteran Grandparent",
+        "id": 25,
+        "type": "Identity",
+        "text": "",
+        "benefit": [ "-X against all medical contidtions",
+            "-X against Dementia related Monsters",
+            "+X against Medical Professionals"],
+        "source": "Kornblith 2022"
     }
+
 ]

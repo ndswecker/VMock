@@ -153,7 +153,7 @@ export const MonsterJSON = [
         "name": "Everyday Experiences of Discrimination",
         "type": "Discrimination",
         "id": 13,
-        "level": 10,
+        "level": 5,
         "modifiers": [
             "+X against all non-white or asian races",
             "+X against female grandparent",
@@ -172,6 +172,7 @@ export const MonsterJSON = [
         "name": "COVID-19",
         "type": "Medical Condition",
         "id": 14,
+        "level": 10,
         "modifiers": ["+X against grandparent with any medical condition.",
             "+X against non-whites"],
         "text": {
@@ -186,17 +187,50 @@ export const MonsterJSON = [
     {
         "name": "Influenza",
         "type": "Medical Condition",
-        "id": 14,
+        "id": 15,
+        "level": 8,
         "modifiers": ["+X against grandparent with any medical condition.",
-            "+X against grandparents level 5 and above"],
+            "+X against grandparents level 5 and above",
+            "+X against any non-white grandparents."],
         "text": {
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
             , or cancer are more likely to develop serious illness",
-        "source": "World Health Organization, Cokley 2022"
+        "source": "CDC 2023"
         },
-        "win": "Congrats! Family may level up 1",
+        "win": "",
         "loose": "Grandparent advances an additional level. Gain 1 negative emotion."
+    },
+    {
+        "name": "Cardiovascular Disease",
+        "type": "Medical Condition",
+        "id": 16,
+        "level": 12,
+        "modifiers": ["+X against grandparent with any medical condition.",
+            "+X against grandparents level 6 and above",
+            "+X against any non-white grandparents."],
+        "text": {
+            "body": "Older people and those with underlying medical conditions \
+            like cardiovascular disease, diabetes, chronic respiratory disease \
+            , or cancer are more likely to develop serious illness",
+        "source": "CDC 2023, Heart Disease and Stroke"
+        },
+        "win": "",
+        "loose": "Grandparent advances an additional level. Gain 1 negative emotion."
+    },
+    {
+        "name": "Stroke",
+        "type": "Medical Condition",
+        "id": 17,
+        "level": 15,
+        "modifiers": ["+X against grandparent with any medical condition.",
+            "+X against grandparents level 7 and above"],
+        "text": {
+            "body": "",
+        "source": "CDC 2023, Heart Disease and Stroke"
+        },
+        "win": "",
+        "loose": "Grandparent advances an additional level. Grandparent has Mobility Disability."
     }
     
     
