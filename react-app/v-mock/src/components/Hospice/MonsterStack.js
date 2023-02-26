@@ -9,6 +9,7 @@ import { MonsterJSON } from "./MonsterJSON";
 export default function Monster() {
 
     const [currentMonster, setCurrentMonster] = useState({});
+    const [isStart, setIsStart] = useState(false);
 
     const monsterArray = [];
     for (let monster of MonsterJSON) {
@@ -20,6 +21,7 @@ export default function Monster() {
         let index = Math.floor(Math.random() * (monsterArray.length - 1));
         console.log(`index: ${index}`);
         setCurrentMonster(monsterArray[index]);
+        setIsStart(true);
     }
 
     return (
@@ -28,8 +30,9 @@ export default function Monster() {
                 onClick={openDoor}>
                 Open Door
             </button>
-            {<Card 
-                sx={{ maxWidth: 300}}
+
+            {isStart ? ( <Card 
+                sx={{ maxWidth: 350}}
                 key={currentMonster.id}>
                 <CardContent>
                     <Typography 
@@ -45,7 +48,7 @@ export default function Monster() {
                     <Typography
                         variant="body2"
                         textAlign="left">
-                        {/* {currentMonster.text.body} */}
+                        {currentMonster.text.body}
                         <br /><br />
                     </Typography>
                     <Typography
@@ -61,7 +64,7 @@ export default function Monster() {
                     </Typography>
                 </CardContent>
             </Card>
-            }
+            ): null}
             {/* {monsterArray.map((monster) => (
                 <Card 
                     sx={{ minWidth: 275}}
