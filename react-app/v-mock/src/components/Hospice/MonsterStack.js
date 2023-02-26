@@ -45,7 +45,7 @@ export default function Monster() {
                     <Typography
                         variant="body2"
                         textAlign="left">
-                        {currentMonster.text.body}
+                        {/* {currentMonster.text.body} */}
                         <br /><br />
                     </Typography>
                     <Typography
