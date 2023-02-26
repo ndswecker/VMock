@@ -29,14 +29,35 @@ export default function Monster() {
                 Open Door
             </button>
             {<Card 
-                sx={{ minWidth: 275}}
-                 key={currentMonster.id}>
+                sx={{ maxWidth: 300}}
+                key={currentMonster.id}>
                 <CardContent>
                     <Typography 
-                        sx={{fontSize: 16}}
-                        color="text.secondary"
-                        gutterBottom>
-                        {currentMonster.name}
+                        variant="h5"
+                        component="div">
+                        {`${currentMonster.name} (${currentMonster.level})`}
+                    </Typography>
+                    <Typography
+                        sx={{ mb: 1.5 }}
+                        color="text.secondary">
+                        {currentMonster.type} 
+                    </Typography>
+                    <Typography
+                        variant="body2"
+                        textAlign="left">
+                        {currentMonster.text.body}
+                        <br /><br />
+                    </Typography>
+                    <Typography
+                        textAlign="left"
+                        color="text.secondary">
+                        {`WIN: ${currentMonster.win}`}
+                        <br />
+                        {`LOOSE: ${currentMonster.loose}`}
+                    </Typography>
+                    <Typography>
+                        <br />
+                        {currentMonster.text.source}
                     </Typography>
                 </CardContent>
             </Card>
