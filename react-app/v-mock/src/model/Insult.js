@@ -1,6 +1,3 @@
-import { isOutputType } from "graphql";
-import React, { useState } from "react";
-
 export default class Insult {
     storage = localStorage;
     key = "insult";

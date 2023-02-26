@@ -31,7 +31,7 @@ export const AdjJSON = [
             "incompetent",
             "stinking",
             "worthless",
-            "rotting"
+            "rotten"
         ]
     },
     {
