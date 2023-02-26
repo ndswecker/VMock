@@ -235,6 +235,15 @@ export const AssetJSON = [
             "-X against Dementia related Monsters",
             "+X against Medical Professionals"],
         "source": "Kornblith 2022"
+    }, 
+    {
+        "name": "LatinX Grandparent",
+        "id": 26,
+        "type": "Identity",
+        "text": "",
+        "benefit": ["-X against Dementia related Monsters",
+            "-X against Cardovascular Disease & Diabetes II"],
+        "source": "Kornblith 2022"
     }
 
 ]
