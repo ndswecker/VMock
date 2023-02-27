@@ -1,7 +1,7 @@
 /* eslint-disable no-multi-str */
 export const MonsterJSON = [
     {
-        "name": "Stairs, not the stairs",
+        "name": "Stairs, Not The Stairs!",
         "type": "Activities of Daily Living (ADL)",
         "id": 1,
         "level": 3,
@@ -77,48 +77,48 @@ export const MonsterJSON = [
         "name": "The Fake Accident Ploy",
         "type": "Fraud",
         "id": 7,
-        "level": 4,
-        "modifiers": "-X grandmas with demententia",
+        "level": 6,
+        "modifiers": "+1 against grandmas with Demententia",
         "text": 
             {"body": "The con artist gets the victim to wire or send money on the pretext that the person’s child or another relative is in the hospital and needs the money.",
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances a level",
+        "loose": "Grandma advances a level"
     },
     {
         "name": "The Fake Grandkid",
         "type": "Fraud",
         "id": 8,
         "level": 4,
-        "modifiers": "-X grandmas with demententia",
+        "modifiers": "+1 against grandmas with Demententia",
         "text": 
             {"body": "Hi grandma, do you kno who this is? My car broke down and I can't afford to fix it. If I don't get 9 thousand dollars by tomorrow I'll lose my job and my house!",
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances a level",
+        "loose": "Grandma advances a level"
     },
     {
         "name": "English-Only Doctor",
         "type": "Healthcare Professional",
         "id": 9,
         "level": 10,
-        "modifiers": "-X to grandparent who doesn't speak english as a first language",
+        "modifiers": "+2 against to grandparent who doesn't speak english as a first language",
         "text": 
             {"body": "Doctor: You won’t need an interpreter, will you?",
             "source": "https://www.ceh.org.au/resource-hub/assessing-the-need-for-an-interpreter/",
             "insight": "Whenever possible, the need for an interpreter should be decided before an appointment. This may be determined from information contained in a referral, when the client requests an interpreter, when you are assessing the need for an interpreter or by asking the client."
             },
-        "win": "Gain 1 Asset",
-        "loose": "Grandparent advances an additional level"
+        "win": "Family advances a level",
+        "loose": "Grandparent advances 2 levels"
     },
     {
         "name": "The Faulty Medical Device",
         "type": "Malpractice",
         "id": 10,
         "level": 11,
-        "modifiers": "-X to grandparent who doesn't speak english as a first language \
+        "modifiers": "-1 to grandparent who doesn't speak english as a first language \
             Only gradparents with a DME may face Faulty Device.",
         "text": 
             {"body": "Reporting a faulty medical device can be a complicated and scary process. \
@@ -126,69 +126,69 @@ export const MonsterJSON = [
             "source": "https://www.fda.gov/medical-devices/medical-device-safety/medical-device-reporting-mdr-how-report-medical-device-problems",
             "insight": "The FDA encourages healthcare professionals, patients, caregivers and consumers to submit voluntary reports of significant adverse events or product problems with medical products to MedWatch, the FDA's Safety Information and Adverse Event Reporting Program."
             },
-        "win": "",
-        "loose": "Grandparent advances additional level"
+        "win": "Family & grandparent advances 1 level",
+        "loose": "Grandparent advances 2 levels"
     },
     {
         "name": "The problem is all in your head",
         "type": "Health care Professional",
         "id": 11,
         "level": 5,
-        "modifiers": "-X to female grandparent",
+        "modifiers": "+2 against female grandparents",
         "text": 
             {"body": "Female patients are often gaslighted about the physical symptoms they are experiences.",
             "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
             "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
-        "win": "Gain 1 asset and the family gains and additional level",
-        "loose": "Gain 1 pain point and 1 resentment point"
+        "win": "Family advances a level",
+        "loose": "Grandparent advances a level"
     },
     {
         "name": "Chronic Pain",
         "type": "Medical Condition",
         "id": 12,
         "level": 5,
-        "modifiers": "-X to female grandparent",
+        "modifiers": "+2 agianst to female grandparents",
         "text": 
             {"body": "Are you sure you aren't just being hysterical?",
             "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
             "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
-        "win": "",
-        "loose": "Gain 1 pain point and 1 resentment point"
+        "win": "Grandma and family advances 1 level",
+        "loose": "Grandma advances 2 levels"
     },
     {
         "name": "Everyday Experiences of Discrimination",
         "type": "Discrimination",
         "id": 13,
         "level": 5,
-        "modifiers": "+X against all non-white or asian races\
-            +X against female grandparent \
-            +X agianst grandparents who do not speak english as a first langauage",
+        "modifiers": "+1 against all non-white or asian races\
+            +1 against female grandparent \
+            +2 agianst grandparents who do not speak english as a first langauage",
         "text": 
             {"body": "The day to day hassles and stress with perceived discrimination",
             "source": "Leong 2022",
             "insight": "Leong found no difference between white and asian \
                 aging populations in regard to the perceived negative affects of daily discrimination"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances 1 level",
+        "loose": "Family loses one level"
     },
     {
         "name": "COVID-19",
         "type": "Medical Condition",
         "id": 14,
-        "level": 10,
-        "modifiers": ["+X against grandparent with any medical condition.",
-            "+X against non-whites"],
+        "level": 12,
+        "modifiers": "+3 against grandparent with any medical condition. \
+            +1 against non-whites",
         "text": {
             "body": "Older people and those with underlying medical conditions \
                 like cardiovascular disease, diabetes, chronic respiratory disease \
                 , or cancer are more likely to develop serious illness",
             "source": "World Health Organization, Cokley 2022"
         },
-        "win": "Congrats! Family may level up 1",
-        "loose": "Grandparent advances an additional level. Gain 1 negative emotion."
+        "win": "Congrats! Family may level up 1. Grandma still levels up 1",
+        "loose": "Grandparent advances 2 levels."
     },
     {
         "name": "Influenza",
