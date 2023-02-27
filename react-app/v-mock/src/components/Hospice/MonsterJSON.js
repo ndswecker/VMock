@@ -4,66 +4,74 @@ export const MonsterJSON = [
         "name": "Stairs, not the stairs",
         "type": "Activities of Daily Living (ADL)",
         "id": 1,
-        "level": 1,
+        "level": 3,
         "modifiers": "+1 to Monster against grandmas with mobility limitations",
         "text": 
             {"body": "1 in 4 seniors fall every year",
             "source": "dailycaring.com, Douglas & Zavotka 2006"
             },
-        "win": "gain 1 mobility point",
-        "loose": "Grandma falls and goes up one level",
+        "win": "Grandparent does not advance a level",
+        "loose": "Grandma falls and goes up 2 levels",
     },
     {
         "name": "Storage Garage, Hoarders Edition",
         "id": 2,
         "type": "Activities of Daily Living (ADL)",
-        "level": 1,
-        "modifiers":"-X to families with a Deadbeat",
+        "level": 3,
+        "modifiers":"-2 to families with a Deadbeat. \
+            -1 to grandma with Mobility Limitations \
+            -1 to grandma with History of Poverty",
         "text": 
-            {"body": "",
+            {"body": "As parents age, families must cope with selling off assets \
+                and downsize. This can be a stressfull experience for all.",
             "source": "Douglas & Zavotka 2006"
             },
-        "win": "Sell off vintage assets, remove X negative points",
-        "loose": "Gain X points of unresolved anger"
+        "win": "Sell off vintage assets. Family advances a level",
+        "loose": "Family looses a level"
     },
     {
         "name": "Nigeria Prince",
         "type": "Fraud",
         "id": 3,
         "level": 4,
-        "modifiers": "-X grandmas with demententia",
+        "modifiers": "-2 grandmas with demententia",
         "text": 
-            {"body": "Financial scams targeting seniors have become so prevelent that they're now considered the 'crime of the 21st centry'",
+            {"body": "Financial scams targeting elderly have become so prevelent that \
+            they're now considered the 'crime of the 21st centry'. Families can \
+            reduce their aging parents risks to fraud by being activily involved in their\
+            daily lives and finances.",
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances a level",
+        "loose": "Grandparent advances a level and looses a positive Asset."
     },
     {
         "name": "Health Insurance Fraudster",
         "type": "Fraud",
         "id": 5,
         "level": 4,
-        "modifiers": "-X grandmas with demententia",
+        "modifiers": "+2 against grandparents with Demententia",
         "text": 
-            {"body": "",
+            {"body": "Fraudsters pretent to be Medicare reps and get aging parents\
+                to reveal their personal information.",
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances 1 level",
+        "loose": "Grandparent advances 1 level and family loses 1 beneficial Asset."
     },
     {
-        "name": "Fake Debt Collector",
+        "name": "Fake Anti-Aging Serum",
         "type": "Fraud",
         "id": 6,
         "level": 4,
-        "modifiers": "-X grandmas with demententia",
+        "modifiers": "+2 against grandparent with Demententia",
         "text": 
-            {"body": "Perpetrators may pose as a Medicare representative to get older people to give them their personal information, or they will provide bogus services for elderly people at makeshift mobile clinics, then use the personal information they provide to bill Medicare and pocket the money.",
+            {"body": "A fake botox scheme in Arizona frauded over $1.5 million \
+                from seniors.",
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
-        "win": "",
-        "loose": ""
+        "win": "Family advances a level",
+        "loose": "Family looses 1 beneficial Asset"
     },
     {
         "name": "The Fake Accident Ploy",
@@ -154,11 +162,9 @@ export const MonsterJSON = [
         "type": "Discrimination",
         "id": 13,
         "level": 5,
-        "modifiers": [
-            "+X against all non-white or asian races",
-            "+X against female grandparent",
-            "+X agianst grandparents who do not speak english as a first langauage"
-        ],
+        "modifiers": "+X against all non-white or asian races\
+            +X against female grandparent \
+            +X agianst grandparents who do not speak english as a first langauage",
         "text": 
             {"body": "The day to day hassles and stress with perceived discrimination",
             "source": "Leong 2022",

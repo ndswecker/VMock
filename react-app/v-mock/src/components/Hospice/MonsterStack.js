@@ -127,8 +127,13 @@ export default function Monster() {
                     </Typography>
                     <Typography>
                         <br />
-                        {`Affects:`}
+                        Dynamics: 
                         {currentAsset.benefit}
+                    </Typography>
+                    <Typography>
+                        <br />
+                        Source:
+                        {currentAsset.source}
                     </Typography>
                 </CardContent>
             </Card>
