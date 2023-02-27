@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
+
+import "./BoardStyles.css";
 
 import { MonsterJSON } from "./MonsterJSON";
 import { AssetJSON } from "./AssetJSON";
@@ -18,35 +20,46 @@ export default function Monster() {
     for (let monster of MonsterJSON) {
         monsterArray.push(monster);
     }
-    console.log(monsterArray);
+    // console.log(monsterArray);
 
     const assetArray = [];
     for (let asset of AssetJSON) {
         assetArray.push(asset);
     }
-    console.log(assetArray);
+    // console.log(assetArray);
 
     const openDoor = () => {
         let index = Math.floor(Math.random() * (monsterArray.length - 1));
-        console.log(`index: ${index}`);
+        // console.log(`index: ${index}`);
         setCurrentMonster(monsterArray[index]);
         setIsStart(true);
     }
 
-    const getAsset = () => {
+    const showAsset = () => {
         let index = Math.floor(Math.random() * (assetArray.length - 1));
         setCurrentAsset(assetArray[index]);
     }
+    
+    const takeAsset = () => {
+        console.log(currentAsset);
+    }
+
+    useEffect(() => {
+        showAsset();
+    });
 
     return (
         <>
-            <button
-                onClick={openDoor}>
-                Open Door
-            </button>
+            <div className="row">
+                <div className="stack-top">
+                    <button
+                        onClick={openDoor}>
+                        Next Experience
+                    </button>
 
-            {isStart ? (<> <Card 
-                sx={{ maxWidth: 350}}
+            {isStart ? (
+            <Card
+                sx={{ maxWidth: 350, minHeight: 300}}
                 key={`${currentMonster.id}M`}>
                 <CardContent>
                     <Typography 
@@ -77,13 +90,29 @@ export default function Monster() {
                         {currentMonster.text.source}
                     </Typography>
                 </CardContent>
-            </Card>
+            </Card>) : 
+                <Card
+                    sx={{maxWidth: 350, minHeight: 200}}>
+                    <CardContent>
+                        <Typography>
+                            Life Experiences
+                        </Typography>
+                    </CardContent>
+                </Card>}
+            </div>
+            
+            <div className="stack-top" >
             <button
-                onClick={getAsset}>
-                Get Asset
+                onClick={showAsset}>
+                See Asset
+            </button>
+            <button
+                onClick={takeAsset}>
+                Take Asset
             </button>
             <Card
-                sx={{maxWidth: 350}}
+                className="stack-top"
+                sx={{maxWidth: 350, minHeight: 300}}
                 key={`${currentAsset.id}A`}>
                 <CardContent>
                     <Typography
@@ -103,7 +132,8 @@ export default function Monster() {
                     </Typography>
                 </CardContent>
             </Card>
-            </>): null}
+            </div>
+            </div>
             {/* {monsterArray.map((monster) => (
                 <Card 
                     sx={{ minWidth: 275}}
