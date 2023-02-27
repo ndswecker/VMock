@@ -221,9 +221,9 @@ export const AssetJSON = [
         "type": "Identity",
         "text": "Black middle-aged adults tend to provide more support to their \
             aging parents than while middle-aged adults",
-        "benefit": ["+X against any Activities of Daily Living",
-            "-X against all medical contidtions",
-            "-X against Dementia related Monsters"],
+        "benefit": "+X against any Activities of Daily Living \
+            -X against all medical contidtions \
+            -X against Dementia related Monsters",
         "source": "Kornblith 2022"
     }, 
     {
@@ -231,9 +231,9 @@ export const AssetJSON = [
         "id": 25,
         "type": "Identity",
         "text": "",
-        "benefit": [ "-X against all medical contidtions",
-            "-X against Dementia related Monsters",
-            "+X against Medical Professionals"],
+        "benefit": "-X against all medical contidtions \
+            -X against Dementia related Monsters \
+            +X against Medical Professionals",
         "source": "Kornblith 2022"
     }, 
     {
@@ -241,8 +241,8 @@ export const AssetJSON = [
         "id": 26,
         "type": "Identity",
         "text": "",
-        "benefit": ["-X against Dementia related Monsters",
-            "-X against Cardovascular Disease & Diabetes II"],
+        "benefit": "-X against Dementia related Monsters \
+            -X against Cardovascular Disease & Diabetes II",
         "source": "Kornblith 2022"
     }
 

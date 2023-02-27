@@ -5,10 +5,13 @@ import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
 import { MonsterJSON } from "./MonsterJSON";
+import { AssetJSON } from "./AssetJSON";
 
 export default function Monster() {
 
     const [currentMonster, setCurrentMonster] = useState({});
+    const [currentAsset, setCurrentAsset] = useState({});
+
     const [isStart, setIsStart] = useState(false);
 
     const monsterArray = [];
@@ -17,11 +20,22 @@ export default function Monster() {
     }
     console.log(monsterArray);
 
+    const assetArray = [];
+    for (let asset of AssetJSON) {
+        assetArray.push(asset);
+    }
+    console.log(assetArray);
+
     const openDoor = () => {
         let index = Math.floor(Math.random() * (monsterArray.length - 1));
         console.log(`index: ${index}`);
         setCurrentMonster(monsterArray[index]);
         setIsStart(true);
+    }
+
+    const getAsset = () => {
+        let index = Math.floor(Math.random() * (assetArray.length - 1));
+        setCurrentAsset(assetArray[index]);
     }
 
     return (
@@ -31,9 +45,9 @@ export default function Monster() {
                 Open Door
             </button>
 
-            {isStart ? ( <Card 
+            {isStart ? (<> <Card 
                 sx={{ maxWidth: 350}}
-                key={currentMonster.id}>
+                key={`${currentMonster.id}M`}>
                 <CardContent>
                     <Typography 
                         variant="h5"
@@ -64,7 +78,32 @@ export default function Monster() {
                     </Typography>
                 </CardContent>
             </Card>
-            ): null}
+            <button
+                onClick={getAsset}>
+                Get Asset
+            </button>
+            <Card
+                sx={{maxWidth: 350}}
+                key={`${currentAsset.id}A`}>
+                <CardContent>
+                    <Typography
+                        variant="h5"
+                        component="div">
+                        {`${currentAsset.name} (${currentAsset.type})`}
+                        
+                    </Typography>
+                    <Typography>
+                        <br />
+                        {currentAsset.text}
+                    </Typography>
+                    <Typography>
+                        <br />
+                        {`Affects:`}
+                        {currentAsset.benefit}
+                    </Typography>
+                </CardContent>
+            </Card>
+            </>): null}
             {/* {monsterArray.map((monster) => (
                 <Card 
                     sx={{ minWidth: 275}}
