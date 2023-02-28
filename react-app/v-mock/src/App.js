@@ -10,13 +10,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <a
+        {/* <a
           className="App-link"
           href="https://www.jblmbirding.com"
           target="_blank"
           rel="noopener noreferrer"
-        >Learn Vicious Mockery</a>
-        <InsultSelect />
+        >Learn Vicious Mockery</a> */}
+        {/* <InsultSelect /> */}
         <MonsterStack />
       </header>
       

@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.stack-top {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin: 5px 5px 5px 5px;
+}
+
+button {
+    margin: 4px;
+    font-size: .75em;
+}
+
+.card {
+    margin: 4px;
+}
+
