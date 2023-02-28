@@ -258,13 +258,32 @@ export const AssetJSON = [
     }, 
     {
         "name": "Osteoporosis",
-        "id": 26,
+        "id": 27,
         "type": "Mobility Limitation",
         "text": "Osteoporosis is a common problem, especially for older women. \
             Bones break more easily. Compression fractures of the vertebrae \
             can cause pain and reduce mobility.",
-        "benefit": "-1 to female grandparent.",
+        "benefit": "-2 to female grandparent. -1 to male grandparent",
         "source": "Mount Sinai 2023"
+    }, 
+    {
+        "name": "Obesity",
+        "id": 28,
+        "type": "Lifestyle & Medical Condition",
+        "text": "CDC defines Obesity as a BMI of 30 or higher. \
+            Obesity rates for seniors have nearly doublesd between \
+            1988 to 2018.",
+        "benefit": "-1 to grandparents against ADLs and all Medical Conditions.",
+        "source": "CDC 2023"
+    }, 
+    {
+        "name": "Dementia",
+        "id": 29,
+        "type": "Medical Condition",
+        "text": "Dementia is characterized by diminished cognitive function so much so \
+            that it interferes with a persons day to day life and actions.",
+        "benefit": "-2 to grandparents agaisnt Fraud Monsters",
+        "source": "CDC 2023"
     }
 
 ]

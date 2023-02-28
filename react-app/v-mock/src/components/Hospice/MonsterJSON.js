@@ -30,11 +30,11 @@ export const MonsterJSON = [
         "loose": "Family looses a level"
     },
     {
-        "name": "Nigeria Prince",
+        "name": "Nigerian Prince",
         "type": "Fraud",
         "id": 3,
         "level": 4,
-        "modifiers": "-2 grandmas with demententia",
+        "modifiers": "",
         "text": 
             {"body": "Financial scams targeting elderly have become so prevelent that \
             they're now considered the 'crime of the 21st centry'. Families can \
@@ -191,30 +191,30 @@ export const MonsterJSON = [
         "loose": "Grandparent advances 2 levels."
     },
     {
-        "name": "Influenza",
+        "name": "Influenza, 'I love visting every year'",
         "type": "Medical Condition",
         "id": 15,
         "level": 8,
-        "modifiers": ["+X against grandparent with any medical condition.",
-            "+X against grandparents level 5 and above",
-            "+X against any non-white grandparents."],
+        "modifiers": "+1 against grandparent with any medical condition. \
+            +1 against grandparents level 5 and above \
+            +1 against any non-white grandparents.",
         "text": {
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
             , or cancer are more likely to develop serious illness",
         "source": "CDC 2023"
         },
-        "win": "",
-        "loose": "Grandparent advances an additional level. Gain 1 negative emotion."
+        "win": "Grandparent and Family advance 1 level",
+        "loose": "Grandparent advances 2 levels."
     },
     {
         "name": "Cardiovascular Disease",
         "type": "Medical Condition",
         "id": 16,
         "level": 12,
-        "modifiers": ["+X against grandparent with any medical condition.",
-            "+X against grandparents level 6 and above",
-            "+X against any non-white grandparents."],
+        "modifiers": "+1 against grandparent with any medical condition. \
+            +1 against grandparents level 6 and above \
+            +1 against any non-white grandparents.",
         "text": {
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
@@ -229,14 +229,16 @@ export const MonsterJSON = [
         "type": "Medical Condition",
         "id": 17,
         "level": 15,
-        "modifiers": ["+X against grandparent with any medical condition.",
-            "+X against grandparents level 7 and above"],
+        "modifiers": "+1 against grandparent with any medical condition. \
+            +1 against grandparents level 7 and above \
+            +1 agains African American grandparent",
         "text": {
-            "body": "",
+            "body": "Stoke is the number one cause of death in America. The risk for \
+                stroke is twice as high for African Americans than for Whites",
         "source": "CDC 2023, Heart Disease and Stroke"
         },
-        "win": "",
-        "loose": "Grandparent advances an additional level. Grandparent has Mobility Disability."
+        "win": "Grandparent and family advances 1 level",
+        "loose": "Grandparent advances 2 levels. Grandparent gains Mobility Disability."
     }
     
     
