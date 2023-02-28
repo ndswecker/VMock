@@ -11,7 +11,7 @@ export const MonsterJSON = [
             "source": "dailycaring.com, Douglas & Zavotka 2006"
             },
         "win": "Grandparent does not advance a level",
-        "loose": "Grandma falls and goes up 2 levels",
+        "lose": "Grandma falls and goes up 2 levels",
     },
     {
         "name": "Storage Garage, Hoarders Edition",
@@ -27,7 +27,7 @@ export const MonsterJSON = [
             "source": "Douglas & Zavotka 2006"
             },
         "win": "Sell off vintage assets. Family advances a level",
-        "loose": "Family looses a level"
+        "lose": "Family loses a level"
     },
     {
         "name": "Nigerian Prince",
@@ -43,7 +43,7 @@ export const MonsterJSON = [
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
-        "loose": "Grandparent advances a level and looses a positive Asset."
+        "lose": "Grandparent advances a level and loses a positive Asset."
     },
     {
         "name": "Health Insurance Fraudster",
@@ -57,7 +57,7 @@ export const MonsterJSON = [
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances 1 level",
-        "loose": "Grandparent advances 1 level and family loses 1 beneficial Asset."
+        "lose": "Grandparent advances 1 level and family loses 1 beneficial Asset."
     },
     {
         "name": "Fake Anti-Aging Serum",
@@ -71,7 +71,7 @@ export const MonsterJSON = [
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
-        "loose": "Family looses 1 beneficial Asset"
+        "lose": "Family loses 1 beneficial Asset"
     },
     {
         "name": "The Fake Accident Ploy",
@@ -84,7 +84,7 @@ export const MonsterJSON = [
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
-        "loose": "Grandma advances a level"
+        "lose": "Grandma advances a level"
     },
     {
         "name": "The Fake Grandkid",
@@ -97,7 +97,7 @@ export const MonsterJSON = [
             "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
-        "loose": "Grandma advances a level"
+        "lose": "Grandma advances a level"
     },
     {
         "name": "English-Only Doctor",
@@ -111,7 +111,7 @@ export const MonsterJSON = [
             "insight": "Whenever possible, the need for an interpreter should be decided before an appointment. This may be determined from information contained in a referral, when the client requests an interpreter, when you are assessing the need for an interpreter or by asking the client."
             },
         "win": "Family advances a level",
-        "loose": "Grandparent advances 2 levels"
+        "lose": "Grandparent advances 2 levels"
     },
     {
         "name": "The Faulty Medical Device",
@@ -127,7 +127,7 @@ export const MonsterJSON = [
             "insight": "The FDA encourages healthcare professionals, patients, caregivers and consumers to submit voluntary reports of significant adverse events or product problems with medical products to MedWatch, the FDA's Safety Information and Adverse Event Reporting Program."
             },
         "win": "Family & grandparent advances 1 level",
-        "loose": "Grandparent advances 2 levels"
+        "lose": "Grandparent advances 2 levels"
     },
     {
         "name": "The problem is all in your head",
@@ -141,7 +141,7 @@ export const MonsterJSON = [
             "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
         "win": "Family advances a level",
-        "loose": "Grandparent advances a level"
+        "lose": "Grandparent advances a level"
     },
     {
         "name": "Chronic Pain",
@@ -150,19 +150,19 @@ export const MonsterJSON = [
         "level": 5,
         "modifiers": "+2 agianst to female grandparents",
         "text": 
-            {"body": "Are you sure you aren't just being hysterical?",
+            {"body": "'Doctor': 'Are you sure you aren't just being hysterical?'",
             "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
             "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
         "win": "Grandma and family advances 1 level",
-        "loose": "Grandma advances 2 levels"
+        "lose": "Grandma advances 2 levels"
     },
     {
         "name": "Everyday Experiences of Discrimination",
         "type": "Discrimination",
         "id": 13,
         "level": 5,
-        "modifiers": "+1 against all non-white or asian races\
+        "modifiers": "+1 against all non-white grandparents\
             +1 against female grandparent \
             +2 agianst grandparents who do not speak english as a first langauage",
         "text": 
@@ -172,7 +172,7 @@ export const MonsterJSON = [
                 aging populations in regard to the perceived negative affects of daily discrimination"
             },
         "win": "Family advances 1 level",
-        "loose": "Family loses one level"
+        "lose": "Family loses one level"
     },
     {
         "name": "COVID-19",
@@ -188,7 +188,7 @@ export const MonsterJSON = [
             "source": "World Health Organization, Cokley 2022"
         },
         "win": "Congrats! Family may level up 1. Grandma still levels up 1",
-        "loose": "Grandparent advances 2 levels."
+        "lose": "Grandparent advances 2 levels."
     },
     {
         "name": "Influenza, 'I love visting every year'",
@@ -205,7 +205,7 @@ export const MonsterJSON = [
         "source": "CDC 2023"
         },
         "win": "Grandparent and Family advance 1 level",
-        "loose": "Grandparent advances 2 levels."
+        "lose": "Grandparent advances 2 levels."
     },
     {
         "name": "Cardiovascular Disease",
@@ -214,15 +214,15 @@ export const MonsterJSON = [
         "level": 12,
         "modifiers": "+1 against grandparent with any medical condition. \
             +1 against grandparents level 6 and above \
-            +1 against any non-white grandparents.",
+            +1 against any non-white or non-asian grandparents.",
         "text": {
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
             , or cancer are more likely to develop serious illness",
         "source": "CDC 2023, Heart Disease and Stroke"
         },
-        "win": "",
-        "loose": "Grandparent advances an additional level. Gain 1 negative emotion."
+        "win": "Grandparent advances 1 level",
+        "lose": "Grandparent advances 2 levels"
     },
     {
         "name": "Stroke",
@@ -238,7 +238,7 @@ export const MonsterJSON = [
         "source": "CDC 2023, Heart Disease and Stroke"
         },
         "win": "Grandparent and family advances 1 level",
-        "loose": "Grandparent advances 2 levels. Grandparent gains Mobility Disability."
+        "lose": "Grandparent advances 2 levels. Grandparent gains Mobility Disability."
     }
     
     
