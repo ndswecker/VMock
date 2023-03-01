@@ -282,8 +282,17 @@ export const AssetJSON = [
         "type": "Medical Condition",
         "text": "Dementia is characterized by diminished cognitive function so much so \
             that it interferes with a persons day to day life and actions.",
-        "benefit": "-2 to grandparents agaisnt Fraud Monsters",
+        "benefit": "-1 against Medical Professional Monsters",
         "source": "CDC 2023"
+    }, 
+    {
+        "name": "Retirement Plan",
+        "id": 30,
+        "type": "Income",
+        "text": "Retirement plans are diverse and depend on various investment strategies. \
+            Income has a large impact on the quality of life for seniors. \
+            Roll a 4 sided dice. 1=(0), 2=(+1), 3=(+2), 4=(+3)",
+        "source": "Economic Development Guide 2021"
     }
 
 ]
