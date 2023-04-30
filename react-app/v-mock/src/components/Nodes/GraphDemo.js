@@ -3,6 +3,8 @@ import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
+import GraphMap from "../../Utility/GraphMap";
+
 import "../Hospice/BoardStyles.css";
 
 export default function GraphDemo() {
@@ -21,25 +23,40 @@ export default function GraphDemo() {
         ['MEX', 'EZE'],
         ['LIM', 'BKK'],
     ];
-    const adjacencyList = new Map();
+    const adjacencyList = new GraphMap();
 
     useEffect(() => {
-        airports.forEach(addNode);
-        routes.forEach(route => addEdge(...route));
+        // airports.forEach(adjacencyList.addNode);
+        // routes.forEach(route => adjacencyList.addEdge(...route));
+        adjacencyList.addNodes(airports);
+        adjacencyList.addEdges(routes);
         console.log(adjacencyList);
         // Demo graph
-        setRouteList(JSON.stringify(adjacencyList, null, 2));
+        // setRouteList(objectToStringState(mapToObject(adjacencyList.graph)));
+        setRouteList(adjacencyList.toString())
     },[]);
 
-    function addNode(airport) {
-        adjacencyList.set(airport, []);
-    }
+    // function mapToObject(map) {
+    //     const object = {};
+    //     for (let [key, value] of map) {
+    //         object[key] = value;
+    //     }
+    //     return object;
+    // }
 
-    // Add an edge, undirected
-    function addEdge(origin, destination) {
-        adjacencyList.get(origin).push(destination);
-        adjacencyList.get(destination).push(origin);
-    }
+    // function objectToStringState(object) {
+    //     return JSON.stringify(object, null, 2);
+    // }
+
+    // function addNode(airport) {
+    //     adjacencyList.set(airport, []);
+    // }
+
+    // // Add an edge, undirected
+    // function addEdge(origin, destination) {
+    //     adjacencyList.get(origin).push(destination);
+    //     adjacencyList.get(destination).push(origin);
+    // }
 
     
 
