@@ -9,6 +9,7 @@ import "../Hospice/BoardStyles.css";
 
 export default function GraphDemo() {
     const [routeList, setRouteList] = useState('');
+    const [path, setPath] = useState('');
     const airports = 'PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM'.split(' ');
 
     const routes = [
@@ -26,42 +27,17 @@ export default function GraphDemo() {
     const adjacencyList = new GraphMap();
 
     useEffect(() => {
-        // airports.forEach(adjacencyList.addNode);
-        // routes.forEach(route => adjacencyList.addEdge(...route));
         adjacencyList.addNodes(airports);
         adjacencyList.addEdges(routes);
         console.log(adjacencyList);
+
+        // adjacencyList.isThereRoute("PHX", "BKK");
+        adjacencyList.findRoute('PHX', 'BKK');
+
         // Demo graph
-        // setRouteList(objectToStringState(mapToObject(adjacencyList.graph)));
         setRouteList(adjacencyList.toString())
     },[]);
 
-    // function mapToObject(map) {
-    //     const object = {};
-    //     for (let [key, value] of map) {
-    //         object[key] = value;
-    //     }
-    //     return object;
-    // }
-
-    // function objectToStringState(object) {
-    //     return JSON.stringify(object, null, 2);
-    // }
-
-    // function addNode(airport) {
-    //     adjacencyList.set(airport, []);
-    // }
-
-    // // Add an edge, undirected
-    // function addEdge(origin, destination) {
-    //     adjacencyList.get(origin).push(destination);
-    //     adjacencyList.get(destination).push(origin);
-    // }
-
-    
-
-    
-    
     return (
         <Card>
             <CardContent>
