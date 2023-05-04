@@ -2,13 +2,17 @@ export default class WordNode {
     #type;
     #value;
 
-    constructor() {
-        this.type = "";
-        this.value = "";
+    constructor(type="", value="") {
+        this.#type = type;
+        this.#value = value;
     }
 
     setType(type) {
         this.#type = type;
+    }
+
+    getType() {
+        return this.#type;
     }
 
     setValue(value) {
@@ -16,7 +20,7 @@ export default class WordNode {
     }
 
     changeValue(value) {
-        this.#value = value
+        this.#value = value;
     }
 
     toString() {

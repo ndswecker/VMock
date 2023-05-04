@@ -32,7 +32,7 @@ export default class GraphMap {
     addEdges(array) {
         array.forEach(route => {
             this.addEdge(...route);
-        })
+        });
     }
 
     isThereRoute(start, end) {
