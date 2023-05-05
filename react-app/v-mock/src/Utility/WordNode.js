@@ -1,33 +1,33 @@
 export default class WordNode {
-    #type;
-    #value;
+    type;
+    word;
 
     constructor(type="", value="") {
-        this.#type = type;
-        this.#value = value;
+        this.type = type;
+        this.word = value;
     }
 
     setType(type) {
-        this.#type = type;
+        this.type = type;
     }
 
     getType() {
-        return this.#type;
+        return this.type;
     }
 
     setValue(value) {
-        this.#value = value;
+        this.word = value;
     }
 
     changeValue(value) {
-        this.#value = value;
+        this.word = value;
     }
 
-    getValue() {
-        return this.#value;
+    getBitches() {
+        return this.word;
     }
 
     toString() {
-        return `type: ${this.#type}, value: ${this.#value}`;
+        return `type: ${this.type}, value: ${this.word}`;
     }
 }

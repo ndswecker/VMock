@@ -14,6 +14,7 @@ export default class Sentence {
         } else {
             this.#sentence.set("SUBJECT", [subject]);
         }
+        console.log(subject);
     }
 
     setPredicateVerb(value="") {
@@ -28,9 +29,12 @@ export default class Sentence {
 
     toString() {
         let string = "";
-        this.#sentence.forEach((value, key) => {
-            string += value + "\n";
-        });
+        // this.#sentence.forEach((value, key) => {
+        //     string += value + "\n";
+        // });
+        for (const word of this.#sentence.entries()) {
+            console.log(this.#sentence.get(word[0]));
+        }
         return string;
     }
 }
