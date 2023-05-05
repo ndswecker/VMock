@@ -64,14 +64,14 @@ export default class GraphMap {
     }
 
     dfs(start, end, visted = new Set(), ) {
-        console.log(start);
+        // console.log(start);
         visted.add(start);
 
         const nextPoints = this.graph.get(start);
         for (const next of nextPoints) {
             if (next === end) {
                 visted.add(next);
-                console.log(visted);
+                // console.log(visted);
                 return visted;
             }
             if (!visted.has(next)) {

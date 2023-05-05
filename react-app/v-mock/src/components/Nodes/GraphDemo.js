@@ -33,7 +33,7 @@ export default function GraphDemo() {
     useEffect(() => {
         adjacencyList.addNodes(airports);
         adjacencyList.addEdges(routes);
-        console.log(adjacencyList);
+        // console.log(adjacencyList);
 
         // adjacencyList.isThereRoute("PHX", "BKK");
         adjacencyList.findRoute("PHX", "BKK");
@@ -47,14 +47,15 @@ export default function GraphDemo() {
 
     function makeWord(){
         let phrase = new Sentence();
-        phrase.makeWord("SUBJECT", "turtle");
+        phrase.setSubject("turtle");
+        phrase.setPredicateVerb("runs");
         setExampleWord(phrase.toString());
     }
 
     return (
         <Card>
             <CardContent>
-                <Typography>
+                <Typography variant="span">
                     {exampleWord}
                 </Typography>
             </CardContent>

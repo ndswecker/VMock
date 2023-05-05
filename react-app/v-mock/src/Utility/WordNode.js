@@ -23,6 +23,10 @@ export default class WordNode {
         this.#value = value;
     }
 
+    getValue() {
+        return this.#value;
+    }
+
     toString() {
         return `type: ${this.#type}, value: ${this.#value}`;
     }
