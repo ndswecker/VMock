@@ -8,7 +8,7 @@ export const MonsterJSON = [
         "modifiers": "+1 to Monster against grandmas with mobility limitations",
         "text": 
             {"body": "1 in 4 seniors fall every year",
-            "source": "dailycaring.com, Douglas & Zavotka 2006"
+                "source": "dailycaring.com, Douglas & Zavotka 2006"
             },
         "win": "Grandparent does not advance a level",
         "lose": "Grandma falls and goes up 2 levels",
@@ -81,7 +81,7 @@ export const MonsterJSON = [
         "modifiers": "+1 against grandmas with Demententia",
         "text": 
             {"body": "The con artist gets the victim to wire or send money on the pretext that the person’s child or another relative is in the hospital and needs the money.",
-            "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
+                "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
         "lose": "Grandma advances a level"
@@ -94,7 +94,7 @@ export const MonsterJSON = [
         "modifiers": "+1 against grandmas with Demententia",
         "text": 
             {"body": "Hi grandma, do you kno who this is? My car broke down and I can't afford to fix it. If I don't get 9 thousand dollars by tomorrow I'll lose my job and my house!",
-            "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
+                "source": "https://consumer.georgia.gov/top-10-scams-targeting-seniors"
             },
         "win": "Family advances a level",
         "lose": "Grandma advances a level"
@@ -107,8 +107,8 @@ export const MonsterJSON = [
         "modifiers": "+2 against to grandparent who doesn't speak english as a first language",
         "text": 
             {"body": "Doctor: You won’t need an interpreter, will you?",
-            "source": "https://www.ceh.org.au/resource-hub/assessing-the-need-for-an-interpreter/",
-            "insight": "Whenever possible, the need for an interpreter should be decided before an appointment. This may be determined from information contained in a referral, when the client requests an interpreter, when you are assessing the need for an interpreter or by asking the client."
+                "source": "https://www.ceh.org.au/resource-hub/assessing-the-need-for-an-interpreter/",
+                "insight": "Whenever possible, the need for an interpreter should be decided before an appointment. This may be determined from information contained in a referral, when the client requests an interpreter, when you are assessing the need for an interpreter or by asking the client."
             },
         "win": "Family advances a level",
         "lose": "Grandparent advances 2 levels"
@@ -137,8 +137,8 @@ export const MonsterJSON = [
         "modifiers": "+2 against female grandparents",
         "text": 
             {"body": "Female patients are often gaslighted about the physical symptoms they are experiences.",
-            "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
-            "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
+                "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
+                "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
         "win": "Family advances a level",
         "lose": "Grandparent advances a level"
@@ -151,8 +151,8 @@ export const MonsterJSON = [
         "modifiers": "+2 agianst to female grandparents",
         "text": 
             {"body": "'Doctor': 'Are you sure you aren't just being hysterical?'",
-            "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
-            "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
+                "source": "https://www.northwell.edu/katz-institute-for-womens-health/articles/gaslighting-in-womens-health",
+                "insight": "Female patients should be empowered to push back, speak up for themselves, and not simply be 'good patients'."
             },
         "win": "Grandma and family advances 1 level",
         "lose": "Grandma advances 2 levels"
@@ -167,8 +167,8 @@ export const MonsterJSON = [
             +2 agianst grandparents who do not speak english as a first langauage",
         "text": 
             {"body": "The day to day hassles and stress with perceived discrimination",
-            "source": "Leong 2022",
-            "insight": "Leong found no difference between white and asian \
+                "source": "Leong 2022",
+                "insight": "Leong found no difference between white and asian \
                 aging populations in regard to the perceived negative affects of daily discrimination"
             },
         "win": "Family advances 1 level",
@@ -202,7 +202,7 @@ export const MonsterJSON = [
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
             , or cancer are more likely to develop serious illness",
-        "source": "CDC 2023"
+            "source": "CDC 2023"
         },
         "win": "Grandparent and Family advance 1 level",
         "lose": "Grandparent advances 2 levels."
@@ -219,7 +219,7 @@ export const MonsterJSON = [
             "body": "Older people and those with underlying medical conditions \
             like cardiovascular disease, diabetes, chronic respiratory disease \
             , or cancer are more likely to develop serious illness",
-        "source": "CDC 2023, Heart Disease and Stroke"
+            "source": "CDC 2023, Heart Disease and Stroke"
         },
         "win": "Grandparent advances 1 level",
         "lose": "Grandparent advances 2 levels"
@@ -235,7 +235,7 @@ export const MonsterJSON = [
         "text": {
             "body": "Stoke is the number one cause of death in America. The risk for \
                 stroke is twice as high for African Americans than for Whites",
-        "source": "CDC 2023, Heart Disease and Stroke"
+            "source": "CDC 2023, Heart Disease and Stroke"
         },
         "win": "Grandparent and family advances 1 level",
         "lose": "Grandparent advances 2 levels. Grandparent gains Mobility Disability."

@@ -34,17 +34,17 @@ export default function Monster() {
         // console.log(`index: ${index}`);
         setCurrentMonster(monsterArray[index]);
         setIsStart(true);
-    }
+    };
 
     const showAsset = () => {
         let index = Math.floor(Math.random() * (assetArray.length - 1));
         setCurrentAsset(assetArray[index]);
         setAssetIsHidden(false);
-    }
+    };
     
     const takeAsset = () => {
         console.log(currentAsset);
-    }
+    };
 
     return (
         <>
@@ -103,57 +103,57 @@ export default function Monster() {
                                 </Typography>
                             </CardContent>
                         </Card>)}
-            </div>
+                </div>
             
-            <div className="stack-top" >
-                <button
-                    onClick={showAsset}>
+                <div className="stack-top" >
+                    <button
+                        onClick={showAsset}>
                     See Asset
-                </button>
-                <button
-                    onClick={takeAsset}>
+                    </button>
+                    <button
+                        onClick={takeAsset}>
                     Take Asset
-                </button>
-                {assetIsHidden ? (
-                    <Card
-                        className="card"
-                        sx={{width: 350, minHeight: 200}}>
-                        <CardContent>
-                            <Typography>
+                    </button>
+                    {assetIsHidden ? (
+                        <Card
+                            className="card"
+                            sx={{width: 350, minHeight: 200}}>
+                            <CardContent>
+                                <Typography>
                                 Hidden
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                ) : (
-                    <Card
-                        className="card"
-                        sx={{width: 350, minHeight: 300}}
-                        key={`${currentAsset.id}A`}>
-                        <CardContent>
-                            <Typography
-                                variant="h5"
-                                component="div">
-                                {`${currentAsset.name} (${currentAsset.type})`}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    ) : (
+                        <Card
+                            className="card"
+                            sx={{width: 350, minHeight: 300}}
+                            key={`${currentAsset.id}A`}>
+                            <CardContent>
+                                <Typography
+                                    variant="h5"
+                                    component="div">
+                                    {`${currentAsset.name} (${currentAsset.type})`}
                                 
-                            </Typography>
-                            <Typography>
-                                <br />
-                                {currentAsset.text}
-                            </Typography>
-                            <Typography>
-                                <br />
+                                </Typography>
+                                <Typography>
+                                    <br />
+                                    {currentAsset.text}
+                                </Typography>
+                                <Typography>
+                                    <br />
                                 Dynamics: 
-                                {currentAsset.benefit}
-                            </Typography>
-                            <Typography>
-                                <br />
+                                    {currentAsset.benefit}
+                                </Typography>
+                                <Typography>
+                                    <br />
                                 Source:
-                                {currentAsset.source}
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                )}
-            </div>
+                                    {currentAsset.source}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    )}
+                </div>
             </div>
         </>
     );

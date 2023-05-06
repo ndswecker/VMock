@@ -295,4 +295,4 @@ export const AssetJSON = [
         "source": "Economic Development Guide 2021"
     }
 
-]
+];

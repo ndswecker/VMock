@@ -168,41 +168,41 @@ export default function Intro() {
         control: (styles) => ({...styles, backgroundColor: "white" }),
         option: (styles, {data, isDisabled, isFocused, isSlected}) => {
             return {...styles,
-            color: 'black'};
+                color: 'black'};
         }
-    }
+    };
 
     return (
         <>
 
-        <div className="selectables">
-            <Select 
-                id = "select-intro"
-                options = {optionsIntro}
-                className = "select"
-                name = "introSelect"
-                onChange = {(opt) => {
-                    introSet(opt);
-                }}
-                styles={selectStyles}
-            />
+            <div className="selectables">
+                <Select 
+                    id = "select-intro"
+                    options = {optionsIntro}
+                    className = "select"
+                    name = "introSelect"
+                    onChange = {(opt) => {
+                        introSet(opt);
+                    }}
+                    styles={selectStyles}
+                />
 
-            { ( isDegrade ) ? (
-                <Degrade 
-                    optionsAdj={optionsAdj} optionsNoun={optionsNoun} optionsVerb={optionsVerb}
-                    wordSet={wordSet}
-                    selectStyles={selectStyles}
-                />
-            ) : null
-            }
-            { (isThreat) ? (
-                <Threat 
-                    optionsAction={optionsAction} optionsSubject={optionsSubject} optionsAdj={optionsAdj} optionsNoun={optionsNoun}
-                    selectStyles={selectStyles}
-                    wordSet={wordSet} subjectSet={subjectSet}
-                />
-            ) : null
-            }
+                { ( isDegrade ) ? (
+                    <Degrade 
+                        optionsAdj={optionsAdj} optionsNoun={optionsNoun} optionsVerb={optionsVerb}
+                        wordSet={wordSet}
+                        selectStyles={selectStyles}
+                    />
+                ) : null
+                }
+                { (isThreat) ? (
+                    <Threat 
+                        optionsAction={optionsAction} optionsSubject={optionsSubject} optionsAdj={optionsAdj} optionsNoun={optionsNoun}
+                        selectStyles={selectStyles}
+                        wordSet={wordSet} subjectSet={subjectSet}
+                    />
+                ) : null
+                }
             
             </div>
             <div className="control-buttons">
