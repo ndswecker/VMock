@@ -1,6 +1,8 @@
 export default class WordNode {
+    // type is grammar type, word is value
     type;
     word;
+    links;
 
     constructor(type="", value="") {
         this.type = type;
@@ -23,7 +25,7 @@ export default class WordNode {
         this.word = value;
     }
 
-    getBitches() {
+    getValue() {
         return this.word;
     }
 
