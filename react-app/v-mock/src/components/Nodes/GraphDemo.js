@@ -54,6 +54,10 @@ export default function GraphDemo() {
         phrase.setPredicateVerb("runs");
         setDisplaySubject(phrase.getSubject());
         setDisplayPredicate(phrase.getPredicate());
+
+        const mod = new WordNode("MOD", "ugly");
+        phrase.subjectMap.get("turtle").addLink(mod);
+        console.log(phrase.subjectMap.get("turtle").toString());
     }
 
     return (
