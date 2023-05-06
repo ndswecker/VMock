@@ -9,12 +9,15 @@ import WordNode from "../../Utility/WordNode";
 import "../Hospice/BoardStyles.css";
 import Sentence from "../../Utility/Sentence";
 
+import "./GraphDemo.css";
+
 export default function GraphDemo() {
     const [routeList, setRouteList] = useState("");
     const [path, setPath] = useState("");
     const airports = "PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM".split(" ");
 
-    const [exampleWord, setExampleWord] = useState("");
+    const [displaySubject, setDisplaySubject] = useState("");
+    const [displayPredicate, setDisplayPredicate] = useState("");
 
     const routes = [
         ["PHX", "LAX"],
@@ -49,19 +52,32 @@ export default function GraphDemo() {
         let phrase = new Sentence();
         phrase.setSubject("turtle");
         phrase.setPredicateVerb("runs");
-        setExampleWord(phrase.toString());
+        setDisplaySubject(phrase.getSubject());
+        setDisplayPredicate(phrase.getPredicate());
     }
 
     return (
-        <Card>
-            <CardContent>
-                <Typography variant="span">
-                    {exampleWord}
-                </Typography>
-            </CardContent>
-        </Card>
+        <>
+            <Card sx={{marginTop: 2, marginBottom: 2}}>
+                <CardContent>
+                    <Typography variant="span">
+                        {`SUBJECT: ${displaySubject}`}
+                    </Typography>
+                </CardContent>
+            </Card>
+            <Card sx={{marginTop: 2, marginBottom: 2}}>
+                <CardContent>
+                    <Typography variant="span">
+                        {`PREDICATE: ${displayPredicate}`}
+                    </Typography>
+                </CardContent>
+            </Card>
+        </>  
+        
     );
 }
+
+
 
 
 

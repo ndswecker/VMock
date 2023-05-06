@@ -14,19 +14,29 @@ export default class Sentence {
     setSubject(value="") {
         let subject = new WordNode("SUBJECT", value);
         this.subjectMap.set(value, subject);
-        console.log(subject);
-        // let subject = new WordNode("SUBJECT", value);
-        // if (this.#sentence.has("SUBJECT")) {
-        //     this.#sentence.get("SUBJECT").push(subject);
-        // } else {
-        //     this.#sentence.set("SUBJECT", [subject]);
-        // }
-        // console.log(subject);
+        console.log(subject.getValue());
+    }
+
+    getSubject() {
+        let text = "";
+        this.subjectMap.forEach((k, v)=> {
+            text += k.getValue() + ", ";
+        });
+        return text;
     }
 
     setPredicateVerb(value="") {
         let predicate = new WordNode("PREDICATE_VERB", value);
         this.predicateMap.set(value, predicate);
+        console.log(predicate.getValue());
+    }
+
+    getPredicate() {
+        let text = "";
+        this.predicateMap.forEach((k, v) => {
+            text += k.getValue() + ", ";
+        });
+        return text;
     }
 
     toString() {
