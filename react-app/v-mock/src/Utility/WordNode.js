@@ -31,7 +31,18 @@ export default class WordNode {
     }
 
     addLink(word) {
+        console.log(word);
         this.links.push(word);
+    }
+
+    getLinks() {
+        let text = "";
+        for (let i = 0; i < this.links.length; i++) {
+            console.log(this.links[i].getValue());
+            text += this.links[i].getValue() + " ";
+        }
+        
+        return text;
     }
 
     removeLink(key) {

@@ -1,5 +1,5 @@
 export const AdjJSON = [
-   {
+    {
         "type": "body",
         "content":  [
             "flabby",
@@ -53,4 +53,4 @@ export const AdjJSON = [
             "vapid"
         ]
     }
-]
+];

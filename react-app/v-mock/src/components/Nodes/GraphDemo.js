@@ -55,9 +55,13 @@ export default function GraphDemo() {
         setDisplaySubject(phrase.getSubject());
         setDisplayPredicate(phrase.getPredicate());
 
-        const mod = new WordNode("MOD", "ugly");
-        phrase.subjectMap.get("turtle").addLink(mod);
-        console.log(phrase.subjectMap.get("turtle").toString());
+        const mod1 = new WordNode("MOD", "ugly");
+        const mod2 = new WordNode("MOD", "the");
+        phrase.subjectMap.get("turtle").addLink(mod2);
+        phrase.subjectMap.get("turtle").addLink(mod1);
+
+        //console.log(phrase.subjectMap.get("turtle").toString());
+        console.log(phrase.formSentence());
     }
 
     return (

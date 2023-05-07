@@ -35,6 +35,21 @@ export default class Sentence {
         return text;
     }
 
+    /**
+     * Collects and concatonates node values into string
+     * @returns {string} concatonated node values
+     */
+    formSentence() {
+        let sub = "";
+        let mods;
+        this.subjectMap.forEach((key, value) => {
+            mods = key.getLinks();
+            sub += mods + key.getValue();
+        });
+
+        return sub;
+    }
+
     toString() {
         let subjects = "Subjects are as follows: ";
         this.subjectMap.forEach((value, key) => {
@@ -45,12 +60,5 @@ export default class Sentence {
             predicates += value.word + " ,";
         });
         return subjects + " // " + predicates;
-        // this.#sentence.forEach((value, key) => {
-        //     string += value + "\n";
-        // });
-        // for (const word of this.#sentence.entries()) {
-        //     console.log(this.#sentence.get(word[0]));
-        // }
-        // return string;
     }
 }

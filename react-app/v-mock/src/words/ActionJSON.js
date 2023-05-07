@@ -1,5 +1,5 @@
 export const ActionJSON = [
-  {
+    {
         "type": "violent",
         "content": [
             "rip",
@@ -10,7 +10,7 @@ export const ActionJSON = [
             "bludgeon",
             "slap",
             "punch"
-            ],
+        ],
     },
     {
         "type": "sexual",
@@ -40,4 +40,4 @@ export const ActionJSON = [
             "wail"
         ]
     } 
-]
+];

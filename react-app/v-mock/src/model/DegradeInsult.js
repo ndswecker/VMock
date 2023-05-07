@@ -1,4 +1,4 @@
-import Insult from "./Insult"
+import Insult from "./Insult";
 
 export default class DegradeInsult extends Insult {
     

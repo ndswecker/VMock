@@ -1,7 +1,7 @@
 export const NounJSON = [
     {
-      "type": "pastry",
-       "content": [
+        "type": "pastry",
+        "content": [
             "waffle",
             "fritter",
             "pie",
@@ -18,8 +18,8 @@ export const NounJSON = [
         ],  
     },
     {
-       "type": "body-part",
-       "content": [
+        "type": "body-part",
+        "content": [
             "head",
             "dick",
             "foot",
@@ -128,5 +128,5 @@ export const NounJSON = [
         ]
     }    
         
-]
+];
     
