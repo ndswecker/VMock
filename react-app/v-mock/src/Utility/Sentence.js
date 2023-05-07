@@ -1,5 +1,8 @@
 import WordNode from "./WordNode";
 
+const PREDICATE = "PREDICATE_VERB";
+const SUBJECT = "SUBJECT";
+
 export default class Sentence {
     subjectMap;
     predicateMap;
@@ -10,10 +13,14 @@ export default class Sentence {
     }
 
     setSubject(value="") {
-        let subject = new WordNode("SUBJECT", value);
+        let subject = new WordNode(SUBJECT, value);
         this.subjectMap.set(value, subject);
     }
 
+    /**
+     * Returns a string of the subject node and its children's values
+     * @returns {string} 
+     */
     getSubject() {
         let text = "";
         this.subjectMap.forEach((k, v)=> {
@@ -23,10 +30,14 @@ export default class Sentence {
     }
 
     setPredicateVerb(value="") {
-        let predicate = new WordNode("PREDICATE_VERB", value);
+        let predicate = new WordNode(PREDICATE, value);
         this.predicateMap.set(value, predicate);
     }
 
+    /**
+     * Returns a string of the predicate node and its children's values
+     * @returns {string} 
+     */
     getPredicate() {
         let text = "";
         this.predicateMap.forEach((k, v) => {

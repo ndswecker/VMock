@@ -12,39 +12,11 @@ import Sentence from "../../Utility/Sentence";
 import "./GraphDemo.css";
 
 export default function GraphDemo() {
-    const [routeList, setRouteList] = useState("");
-    const [path, setPath] = useState("");
-    const airports = "PHX BKK OKC JFK LAX MEX EZE HEL LOS LAP LIM".split(" ");
 
     const [displaySubject, setDisplaySubject] = useState("");
     const [displayPredicate, setDisplayPredicate] = useState("");
 
-    const routes = [
-        ["PHX", "LAX"],
-        ["PHX", "JFK"],
-        ["JFK", "OKC"],
-        ["JFK", "HEL"],
-        ["JFK", "LOS"],
-        ["MEX", "LAX"],
-        ["MEX", "BKK"],
-        ["MEX", "LIM"],
-        ["MEX", "EZE"],
-        ["LIM", "BKK"],
-    ];
-    const adjacencyList = new GraphMap();
-
     useEffect(() => {
-        adjacencyList.addNodes(airports);
-        adjacencyList.addEdges(routes);
-        // console.log(adjacencyList);
-
-        // adjacencyList.isThereRoute("PHX", "BKK");
-        adjacencyList.findRoute("PHX", "BKK");
-
-        // Demo graph
-        setRouteList(adjacencyList.toString());
-
-        // Call word functionality
         makeWord();
     },[]);
 
