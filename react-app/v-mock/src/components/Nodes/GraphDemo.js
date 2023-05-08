@@ -27,10 +27,14 @@ export default function GraphDemo() {
         setDisplaySubject(phrase.getSubject());
         setDisplayPredicate(phrase.getPredicate());
 
-        const mod1 = new WordNode("MOD", "ugly");
-        const mod2 = new WordNode("MOD", "the");
-        phrase.subjectMap.get("turtle").addLink(mod2);
+        // const mod1 = new WordNode("MOD", "the");
+        const mod1 = phrase.makeWord("MOD", "the");
+        const mod2 = new WordNode("MOD", "slow");
+        const mod3 = new WordNode("MOD", "ugly");
+        
         phrase.subjectMap.get("turtle").addLink(mod1);
+        phrase.subjectMap.get("turtle").addLink(mod2);
+        phrase.subjectMap.get("turtle").addLink(mod3);
 
         //console.log(phrase.subjectMap.get("turtle").toString());
         console.log(phrase.formSentence());

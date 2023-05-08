@@ -31,14 +31,16 @@ export default class WordNode {
     }
 
     addLink(word) {
-        console.log(word);
         this.links.push(word);
     }
 
+    /**
+     * 
+     * @returns {string} of values of node's children
+     */
     getLinks() {
         let text = "";
         for (let i = 0; i < this.links.length; i++) {
-            console.log(this.links[i].getValue());
             text += this.links[i].getValue() + " ";
         }
         

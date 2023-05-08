@@ -47,6 +47,21 @@ export default class Sentence {
     }
 
     /**
+     * Function to make and return a new word
+     * @param {string} type is the word type
+     * @param {*} text is the value of the word
+     * @returns {WordNode}
+     */
+    makeWord(type, text) {
+        let word = new WordNode(type, text);
+        return word;
+    }
+
+    addObject(verb) {
+        
+    }
+
+    /**
      * Collects and concatonates node values into string
      * @returns {string} concatonated node values
      */
@@ -54,8 +69,8 @@ export default class Sentence {
         let sub = "";
         let mods;
         this.subjectMap.forEach((key, value) => {
-            mods = key.getLinks();
-            sub += mods + key.getValue();
+            // mods = key.getLinks();
+            sub += key.getLinks() + key.getValue();
         });
 
         return sub;
