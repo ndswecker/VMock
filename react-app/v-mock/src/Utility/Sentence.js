@@ -1,4 +1,5 @@
 import WordNode from "./WordNode";
+import PredicateVerbNode from "./PredicateVerbNode";
 
 const PREDICATE = "PREDICATE_VERB";
 const SUBJECT = "SUBJECT";
@@ -23,14 +24,14 @@ export default class Sentence {
      */
     getSubject() {
         let text = "";
-        this.subjectMap.forEach((k, v)=> {
-            text += k.getValue() + ", ";
+        this.subjectMap.forEach((key, v)=> {
+            text += key.getLinks() + key.getValue();
         });
         return text;
     }
 
     setPredicateVerb(value="") {
-        let predicate = new WordNode(PREDICATE, value);
+        let predicate = new PredicateVerbNode(value);
         this.predicateMap.set(value, predicate);
     }
 
@@ -40,8 +41,9 @@ export default class Sentence {
      */
     getPredicate() {
         let text = "";
-        this.predicateMap.forEach((k, v) => {
-            text += k.getValue() + ", ";
+        this.predicateMap.forEach((key, value) => {
+            // text += key.getValue() + ", ";
+            text += key.getValue() + " " + key.getLinks();
         });
         return text;
     }
@@ -58,7 +60,7 @@ export default class Sentence {
     }
 
     addObject(verb) {
-        
+
     }
 
     /**
@@ -66,12 +68,10 @@ export default class Sentence {
      * @returns {string} concatonated node values
      */
     formSentence() {
-        let sub = "";
-        let mods;
-        this.subjectMap.forEach((key, value) => {
-            // mods = key.getLinks();
-            sub += key.getLinks() + key.getValue();
-        });
+        let sub = this.getSubject();
+        // this.subjectMap.forEach((key, value) => {
+        //     sub += key.getLinks() + key.getValue();
+        // });
 
         return sub;
     }

@@ -52,7 +52,7 @@ export default class WordNode {
             return false;
         } else {
             let index = this.links.indexOf(key);
-            this.links.splace(index, 1);
+            this.links.splice(index, 1);
             return true;
         }
     }

@@ -24,8 +24,6 @@ export default function GraphDemo() {
         let phrase = new Sentence();
         phrase.setSubject("turtle");
         phrase.setPredicateVerb("runs");
-        setDisplaySubject(phrase.getSubject());
-        setDisplayPredicate(phrase.getPredicate());
 
         // const mod1 = new WordNode("MOD", "the");
         const mod1 = phrase.makeWord("MOD", "the");
@@ -35,6 +33,12 @@ export default function GraphDemo() {
         phrase.subjectMap.get("turtle").addLink(mod1);
         phrase.subjectMap.get("turtle").addLink(mod2);
         phrase.subjectMap.get("turtle").addLink(mod3);
+
+        const fast = phrase.makeWord("OBJECT", "fast");
+        phrase.predicateMap.get("runs").addLink(fast);
+
+        setDisplaySubject(phrase.getSubject());
+        setDisplayPredicate(phrase.getPredicate());
 
         //console.log(phrase.subjectMap.get("turtle").toString());
         console.log(phrase.formSentence());
