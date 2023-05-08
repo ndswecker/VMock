@@ -60,7 +60,7 @@ export default class Sentence {
     }
 
     addObject(verb) {
-
+        
     }
 
     /**
@@ -68,12 +68,7 @@ export default class Sentence {
      * @returns {string} concatonated node values
      */
     formSentence() {
-        let sub = this.getSubject();
-        // this.subjectMap.forEach((key, value) => {
-        //     sub += key.getLinks() + key.getValue();
-        // });
-
-        return sub;
+        return this.getSubject() + " " + this.getPredicate();
     }
 
     toString() {
