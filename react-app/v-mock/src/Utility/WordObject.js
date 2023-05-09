@@ -7,24 +7,28 @@ const TYPE = "OBjECT_WORD";
  * Type is preset in TYPE
  */
 export default class WordObject extends WordNode {
-    isTransitive;
+    isDirect;
 
     /**
      * @param {String} value WordNode English printed value
-     * @param {Boolean} trans WordObject transitive or intransitive
+     * @param {Boolean} direct WordObject direct or indirect
      * @returns {WordObject} WordObject inherits directly from WordNode
      */
-    constructor(value = "", trans = true) {
+    constructor(value = "", direct = true) {
         super(TYPE, value);
-        this.isTransitive = trans;
+        this.isDirect = direct;
     }
 
     /**
-     * @property {Function} setIsTransitive Sets if the Object is transitive or intransitve
-     * @param {Boolean} trans Object is transitive is true. Is intransitive is false.
+     * @property {Function} setIsTransitive Sets if the Object is direct or indirect
+     * @param {Boolean} dir Object if direct is true. Is indirect is false.
      */
-    setIsTransitive(trans) {
-        this.isTransitive = trans;
+    setIsDirect(dir) {
+        this.isDirect = dir;
+    }
+
+    isObjectDirect() {
+        return this.isDirect;
     }
 
 }
