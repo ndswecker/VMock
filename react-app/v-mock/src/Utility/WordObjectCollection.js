@@ -25,29 +25,18 @@ export default class WordObjectCollection {
     }
 
     /**
-     * @summary Collates all WordObjects and their modifactions into a string
+     * @summary toString collates all WordObjects and their modifactions into a string with
+     * appropriate spacing and compound joiners.
      * @returns {String} 
      */
     toString() {
-        // Set inital text to no characters
         let text = "";
-
-        // Iterate over each object in collect and join them with appropriate spacing/joining
         for (let i=0; i < this.objects.length; i++) {
-
             // Add a leading space to all obects excluding the first
-            if (i != 0) {
-                //  add PREV_TEXT, SPACE, VALUE
-                text += " " ;
-            }
-
+            if (i != 0) {text += " " ;}
             text += `${this.objects[i].getValue()}`;
-
             // Add the compound joiner after all objects except the last
-            if (i != this.objects.length - 1) {
-
-                text += ` ${this.compound}`;
-            } 
+            if (i != this.objects.length - 1) {text += ` ${this.compound}`;} 
         }
         return text;
     }
