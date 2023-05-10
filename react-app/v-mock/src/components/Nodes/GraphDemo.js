@@ -7,6 +7,7 @@ import GraphMap from "../../Utility/GraphMap";
 import WordNode from "../../Utility/WordNode";
 import WordObjectCollection from "../../Utility/WordObjectCollection";
 import WordObject from "../../Utility/WordObject";
+import VerbBuilder from "../../Utility/VerbBuilder";
 
 import "../Hospice/BoardStyles.css";
 import Sentence from "../../Utility/Sentence";
@@ -45,11 +46,16 @@ export default function GraphDemo() {
         //console.log(phrase.subjectMap.get("turtle").toString());
         console.log(phrase.formSentence());
 
-        const objColl = new WordObjectCollection("then");
-        objColl.addObject(new WordObject("bitches", true));
-        objColl.addObject(new WordObject("money", true));
-        objColl.addObject(new WordObject("keys", true));
-        console.log(objColl.toString());
+        // const objColl = new WordObjectCollection();
+        // objColl.addObject(new WordObject("bitches", true));
+        // objColl.addObject(new WordObject("money", true));
+        // objColl.addObject(new WordObject("keys", true));
+        // console.log(objColl.toString());
+
+        const verb = new VerbBuilder("run")
+            .setIsGerund(true)
+            .build();
+        console.log(verb);
     }
 
     return (
