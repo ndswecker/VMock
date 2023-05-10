@@ -53,13 +53,16 @@ export default function GraphDemo() {
         // objColl.addObject(new WordObject("keys", true));
         // console.log(objColl.toString());
 
-        // const verb = new VerbBuilder("run")
-        //     .setIsGerund(true)
-        //     .build();
-        // console.log(verb);
+        const verb = new VerbBuilder("run")
+            .setIsGerund(true)
+            .build();
 
         const bitches = new ObjectBuilder("bitches").build();
-        console.log(bitches);
+        verb.addObject(bitches);
+        console.log(verb);
+
+        
+        // console.log(bitches);
     }
 
     return (

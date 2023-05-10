@@ -1,5 +1,6 @@
 
 import WordNode from "./WordNode";
+import WordObjectCollection from "./WordObjectCollection";
 
 const TYPE = "VERB";
 
@@ -12,14 +13,19 @@ export default class WordVerb extends WordNode {
     isInfinitive;
     isGerund;
 
+    objectCollection;
+
     constructor(value, dynamic, stative, transitive, linking, infinitive, gerund) {
         super(TYPE, value);
+
         this.isDynamic = dynamic;
         this.isStative = stative;
         this.isTransitive = transitive;
         this.isLinking = linking;
         this.isInfinitive = infinitive;
         this.isGerund = gerund;
+
+        this.objectCollection = new WordObjectCollection();
     }
 
     setIsDynamic(dynamic) {
@@ -68,5 +74,10 @@ export default class WordVerb extends WordNode {
 
     isVerbGerund() {
         return this.isGerund;
+    }
+
+    
+    addObject(object) {
+        this.WordObjectCollection.addObject(object);
     }
 }

@@ -17,7 +17,20 @@ export default class WordObjectCollection {
     }
 
     addObject(object) {
-        this.objects.push(object);
+
+        if (typeof object === Array) {
+            object.forEach(obj => {
+                this.objects.push(obj);
+            });
+        } else {
+            this.objects.push(object);
+        }
+        
+    }
+
+    getObject(name) {
+        let index = this.objects.indexOf(name);
+        return this.objects[index];
     }
 
     setCompound(compound) {

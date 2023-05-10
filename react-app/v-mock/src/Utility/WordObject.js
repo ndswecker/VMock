@@ -19,10 +19,6 @@ export default class WordObject extends WordNode {
         this.isDirect = direct;
     }
 
-    /**
-     * @property {Function} setIsTransitive Sets if the Object is direct or indirect
-     * @param {Boolean} dir Object if direct is true. Is indirect is false.
-     */
     setIsDirect(dir) {
         this.isDirect = dir;
     }
