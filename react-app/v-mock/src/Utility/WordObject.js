@@ -14,7 +14,7 @@ export default class WordObject extends WordNode {
      * @param {Boolean} direct WordObject direct or indirect
      * @returns {WordObject} WordObject inherits directly from WordNode
      */
-    constructor(value = "", direct = true) {
+    constructor(value, direct) {
         super(TYPE, value);
         this.isDirect = direct;
     }

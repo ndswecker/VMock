@@ -13,6 +13,7 @@ import "../Hospice/BoardStyles.css";
 import Sentence from "../../Utility/Sentence";
 
 import "./GraphDemo.css";
+import ObjectBuilder from "../../Utility/ObjectBuilder";
 
 export default function GraphDemo() {
 
@@ -52,10 +53,13 @@ export default function GraphDemo() {
         // objColl.addObject(new WordObject("keys", true));
         // console.log(objColl.toString());
 
-        const verb = new VerbBuilder("run")
-            .setIsGerund(true)
-            .build();
-        console.log(verb);
+        // const verb = new VerbBuilder("run")
+        //     .setIsGerund(true)
+        //     .build();
+        // console.log(verb);
+
+        const bitches = new ObjectBuilder("bitches").build();
+        console.log(bitches);
     }
 
     return (

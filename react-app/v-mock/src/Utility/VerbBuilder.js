@@ -1,11 +1,8 @@
 import WordVerb from "./WordVerb";
 
-const TYPE = "VERB";
-
 export default class VerbBuilder {
 
     constructor(value= "") {
-        this.type = TYPE;
         this.value = value;
     }
 
