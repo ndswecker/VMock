@@ -25,27 +25,27 @@ export default function GraphDemo() {
     },[]);
 
     function makeWord(){
-        let phrase = new Sentence();
-        phrase.setSubject("turtle");
-        phrase.setPredicateVerb("runs");
+        // let phrase = new Sentence();
+        // phrase.setSubject("turtle");
+        // phrase.setPredicateVerb("runs");
 
-        // const mod1 = new WordNode("MOD", "the");
-        const mod1 = phrase.makeWord("MOD", "the");
-        const mod2 = new WordNode("MOD", "slow");
-        const mod3 = new WordNode("MOD", "ugly");
+        // // const mod1 = new WordNode("MOD", "the");
+        // const mod1 = phrase.makeWord("MOD", "the");
+        // const mod2 = new WordNode("MOD", "slow");
+        // const mod3 = new WordNode("MOD", "ugly");
         
-        phrase.subjectMap.get("turtle").addLink(mod1);
-        phrase.subjectMap.get("turtle").addLink(mod2);
-        phrase.subjectMap.get("turtle").addLink(mod3);
+        // phrase.subjectMap.get("turtle").addLink(mod1);
+        // phrase.subjectMap.get("turtle").addLink(mod2);
+        // phrase.subjectMap.get("turtle").addLink(mod3);
 
-        const fast = phrase.makeWord("OBJECT", "fast");
-        phrase.predicateMap.get("runs").addLink(fast);
+        // const fast = phrase.makeWord("OBJECT", "fast");
+        // phrase.predicateMap.get("runs").addLink(fast);
 
-        setDisplaySubject(phrase.getSubject());
-        setDisplayPredicate(phrase.getPredicate());
+        // setDisplaySubject(phrase.getSubject());
+        // setDisplayPredicate(phrase.getPredicate());
 
         //console.log(phrase.subjectMap.get("turtle").toString());
-        console.log(phrase.formSentence());
+        // console.log(phrase.formSentence());
 
         // const objColl = new WordObjectCollection();
         // objColl.addObject(new WordObject("bitches", true));
