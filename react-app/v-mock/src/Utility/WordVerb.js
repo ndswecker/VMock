@@ -75,10 +75,9 @@ export default class WordVerb extends WordNode {
     isVerbGerund() {
         return this.isGerund;
     }
-
     
+
     addObject(object) {
-        console.log(object);
         this.objectCollection.addObject(object);
     }
 }
