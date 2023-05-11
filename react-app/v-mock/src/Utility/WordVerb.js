@@ -78,6 +78,7 @@ export default class WordVerb extends WordNode {
 
     
     addObject(object) {
-        this.WordObjectCollection.addObject(object);
+        console.log(object);
+        this.objectCollection.addObject(object);
     }
 }
