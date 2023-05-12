@@ -18,4 +18,13 @@ export default class WordVerbCollection {
             this.verbs.push(verb);
         }
     }
+
+    getVerb(word) {
+        this.verbs.forEach(verb => {
+            if (verb.getValue() === word) {
+                return verb;
+            }
+        });
+        return false;
+    }
 }
