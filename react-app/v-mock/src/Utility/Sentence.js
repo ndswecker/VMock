@@ -7,16 +7,21 @@ const SUBJECT = "SUBJECT";
 export default class Sentence {
     verbCollection;
 
-    constructor(subject, verb, object) {
+    constructor(verb, subject) {
         this.verbCollection = new WordVerbCollection();
         this.verbCollection.addVerb(verb);
+        verb.addSubject(subject);
     }
 
     addVerb(verb) {
         this.verbCollection.addVerb(verb);
     }
 
-    addSubject(subject, verb) {
-        let target = this.verbCollection;
+    addSubject(verb, subject) {
+        verb.addSubject(subject);
+    }
+
+    addObject(object, verb) {
+        this.verbCollection.addObject(object);
     }
 }

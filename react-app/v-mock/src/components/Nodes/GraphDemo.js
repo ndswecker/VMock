@@ -11,9 +11,11 @@ import VerbBuilder from "../../Utility/VerbBuilder";
 
 import "../Hospice/BoardStyles.css";
 import Sentence from "../../Utility/Sentence";
+import SentenceBuilder from "../../Utility/SentenceBuilder";
 
 import "./GraphDemo.css";
 import ObjectBuilder from "../../Utility/ObjectBuilder";
+import SubjectBuilder from "../../Utility/SubjectBuilder";
 
 export default function GraphDemo() {
 
@@ -25,21 +27,20 @@ export default function GraphDemo() {
     },[]);
 
     function makeWord(){
-        // let phrase = new Sentence();
-        // phrase.setSubject("turtle");
-        // phrase.setPredicateVerb("runs");
+        let him = new SubjectBuilder("he").build();
+        let hid = new VerbBuilder("hid").build();
+        let bitches = new ObjectBuilder("the bitches").build();
+        hid.addObject(bitches);
 
-        // // const mod1 = new WordNode("MOD", "the");
-        // const mod1 = phrase.makeWord("MOD", "the");
-        // const mod2 = new WordNode("MOD", "slow");
-        // const mod3 = new WordNode("MOD", "ugly");
-        
-        // phrase.subjectMap.get("turtle").addLink(mod1);
-        // phrase.subjectMap.get("turtle").addLink(mod2);
-        // phrase.subjectMap.get("turtle").addLink(mod3);
+        let phrase = new SentenceBuilder(hid, him).build();
+        console.log(phrase);
 
-        // const fast = phrase.makeWord("OBJECT", "fast");
-        // phrase.predicateMap.get("runs").addLink(fast);
+        // let phrase = new SentenceBuilder()
+        //     .setVerb("hid")
+        //     .setSubject("Franko")
+        //     .setObject("the bitches")
+        //     .build();
+        // console.log(phrase);
 
         // setDisplaySubject(phrase.getSubject());
         // setDisplayPredicate(phrase.getPredicate());
@@ -53,13 +54,13 @@ export default function GraphDemo() {
         // objColl.addObject(new WordObject("keys", true));
         // console.log(objColl.toString());
 
-        const verb = new VerbBuilder("run")
-            .setIsGerund(true)
-            .build();
+        // const verb = new VerbBuilder("run")
+        //     .setIsGerund(true)
+        //     .build();
 
-        const bitches = new ObjectBuilder("bitches").build();
-        verb.addObject(bitches);
-        console.log(verb);
+        // const bitches = new ObjectBuilder("bitches").build();
+        // verb.addObject(bitches);
+        // console.log(verb);
 
         
         // console.log(bitches);

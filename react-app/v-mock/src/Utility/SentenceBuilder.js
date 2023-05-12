@@ -1,22 +1,13 @@
 
 import Sentence from "./Sentence";
-import VerbBuilder from "./VerbBuilder";
 
 export default class SentenceBuilder {
 
     subject;
     verb;
-    obj;
 
-    constructor() {
-
-    }
-
-    setVerb(verb) {
+    constructor(verb, subject) {
         this.verb = verb;
-    }
-
-    setSubject(subject) {
         this.subject = subject;
     }
 
@@ -25,12 +16,14 @@ export default class SentenceBuilder {
     }
 
     build() {
+        let sentence = new Sentence(this.verb, this.subject);
 
         if (!("obj" in this)) {
             this.obj = null;
+        } else {
+            sentence.addObject(this.obj, this.verb);
         }
-
-        let sentence = new Sentence(this.subject, this.verb, this.obj);
+        
         return sentence;
     }
     

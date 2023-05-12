@@ -1,6 +1,6 @@
 import WordNode from "./WordNode";
 
-const TYPE = "SUBJECT_WORD";
+const TYPE = "SUBJECT";
 
 export default class WordSubject extends WordNode {
 
