@@ -13,8 +13,9 @@ export default class Sentence {
         verb.addSubject(subject);
     }
 
-    addVerb(verb) {
+    addVerb(verb, subject) {
         this.verbCollection.addVerb(verb);
+        verb.addSubject(subject);
     }
 
     addSubject(verb, subject) {

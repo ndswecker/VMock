@@ -36,7 +36,7 @@ export default function GraphDemo() {
         kill.addObject(bitches);
 
         let phrase = new SentenceBuilder(hid, him).build();
-        phrase.addVerb(kill);
+        phrase.addVerb(kill, him);
         console.log(phrase.verbCollection.toString());
         console.log(phrase);
 
