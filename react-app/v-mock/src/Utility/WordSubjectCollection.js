@@ -19,4 +19,14 @@ export default class WordSubjectCollection {
             this.subjects.push(subject);
         }
     }
+
+    listSubjects() {
+        let text = "";
+        for (let i = 0; i < this.subjects.length; i++) {
+            if (i != 0) {text += " ";}
+            text += `${this.subjects[i].getValue()}`;
+            if (i != this.subjects.length - 1) {text += ` ${this.compound}`;}
+        }
+        return text;
+    }
 }

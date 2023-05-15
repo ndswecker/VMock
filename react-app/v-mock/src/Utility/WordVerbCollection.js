@@ -28,6 +28,16 @@ export default class WordVerbCollection {
         return false;
     }
 
+    size() {
+        return this.verbs.length;
+    }
+
+    isAllSubjectsSame() {
+        for (let i = 0; i < this.verbs.length; i ++) {
+            // verbs[i].get
+        }
+    }
+
     toString() {
         let text = "";
         for (let i = 0; i < this.verbs.length; i++) {

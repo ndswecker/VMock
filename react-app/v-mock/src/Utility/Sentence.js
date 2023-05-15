@@ -25,4 +25,11 @@ export default class Sentence {
     addObject(object, verb) {
         this.verbCollection.addObject(object);
     }
+
+    toString() {
+        let subject;
+        for (let i = 0; i < this.verbCollection.size(); i++) {
+            //To Do
+        }
+    }
 }
