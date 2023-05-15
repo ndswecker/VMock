@@ -27,4 +27,17 @@ export default class WordVerbCollection {
         });
         return false;
     }
+
+    toString() {
+        let text = "";
+        for (let i = 0; i < this.verbs.length; i++) {
+            if (i !=0) {
+                text += " ";
+            }
+            // console.log(this.verbs[i]);
+            text += `${this.verbs[i].toString()}`;
+            if (i != this.verbs.length - 1) {text += ` ${this.joiner}`;}
+        }
+        return text;
+    }
 }

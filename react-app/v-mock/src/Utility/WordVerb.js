@@ -87,4 +87,11 @@ export default class WordVerb extends WordNode {
     addSubject(subject) {
         this.subjectCollection.addSubject(subject);
     }
+
+    toString() {
+        let text = this.getValue();
+        text += ` ${this.objectCollection.toString()}`; 
+        
+        return text;
+    }
 }
