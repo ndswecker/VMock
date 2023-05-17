@@ -33,8 +33,12 @@ export default class WordVerbCollection {
     }
 
     isAllSubjectsSame() {
-        for (let i = 0; i < this.verbs.length; i ++) {
-            // verbs[i].get
+        for (let v = 0; v < this.verbs.length; v ++) {
+
+            let startingSubjectList = this.verbs[0].getSubject();
+            for (let s = 0; s < this.verbs[v].length; s++) {
+                //TO DO
+            }
         }
     }
 

@@ -38,8 +38,8 @@ export default function GraphDemo() {
         let phrase = new SentenceBuilder(hid, him).build();
         phrase.addVerb(kill, him);
         // console.log(phrase.verbCollection.toString());
-        console.log(kill.getSubject());
-        console.log(phrase);
+        // console.log(kill.getSubject());
+        console.log(phrase.toString());
 
     }
 
