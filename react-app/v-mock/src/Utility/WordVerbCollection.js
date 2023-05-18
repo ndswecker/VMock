@@ -32,14 +32,25 @@ export default class WordVerbCollection {
         return this.verbs.length;
     }
 
+    /**
+     * Determine if all verbs share the same subject
+     * @returns {boolean} 
+     */
     isAllSubjectsSame() {
-        for (let v = 0; v < this.verbs.length; v ++) {
-
-            let startingSubjectList = this.verbs[0].getSubject();
-            for (let s = 0; s < this.verbs[v].length; s++) {
-                //TO DO
+        let startingSubjectList = this.verbs[0].getSubject();
+        // Iterate thru each verb to see its respective subject list
+        for (let v = 1; v < this.verbs.length; v ++) {
+            let nextSubjectList = this.verbs[v].getSubject();
+            
+            if (startingSubjectList != nextSubjectList) {
+                console.log(`${startingSubjectList} != ${nextSubjectList}`);
+                return false;
+            } else {
+                console.log(`${startingSubjectList} === ${nextSubjectList}`);
             }
         }
+
+        return true;
     }
 
     toString() {

@@ -28,18 +28,25 @@ export default function GraphDemo() {
 
     function makeWord(){
         let him = new SubjectBuilder("Justin").build();
+        let her = new SubjectBuilder("Phylis").build();
+
         let kill = new VerbBuilder("killed").build();
-        let bitches = new ObjectBuilder("the bitches").setIsDirect(true).build();
         let hid = new VerbBuilder("hid").build();
+
+        let bitches = new ObjectBuilder("the bitches").setIsDirect(true).build();
         let money = new ObjectBuilder("the money").build();
         hid.addObject(money);
-        kill.addObject(bitches);
+        // kill.addObject(bitches);
 
-        let phrase = new SentenceBuilder(hid, him).build();
-        phrase.addVerb(kill, him);
-        // console.log(phrase.verbCollection.toString());
-        // console.log(kill.getSubject());
-        console.log(phrase.toString());
+        let phrase = new SentenceBuilder()
+            .setSubject(him)
+            .setVerb(kill)
+            .setObject(bitches)
+            .build();
+        phrase.addVerb(hid, her);
+        
+        console.log(phrase);
+        console.log(phrase.verbCollection.isAllSubjectsSame());
 
     }
 
