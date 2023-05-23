@@ -30,4 +30,4 @@ export const IntroJSON = [
             "Why am I always the one who has to"
         ]   
     }
-]
+];

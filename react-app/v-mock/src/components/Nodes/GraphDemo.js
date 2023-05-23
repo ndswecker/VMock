@@ -35,7 +35,10 @@ export default function GraphDemo() {
 
         let bitches = new ObjectBuilder("the bitches").setIsDirect(true).build();
         let money = new ObjectBuilder("the money").build();
+
+        // Link Subject and Objects with the Verb
         hid.addObject(money);
+        // hid.addSubject(him);
         // kill.addObject(bitches);
 
         let phrase = new SentenceBuilder()
@@ -43,7 +46,7 @@ export default function GraphDemo() {
             .setVerb(kill)
             .setObject(bitches)
             .build();
-        phrase.addVerb(hid, her);
+        phrase.addVerb(hid, him);
         
         console.log(phrase);
         console.log(phrase.verbCollection.isAllSubjectsSame());

@@ -36,6 +36,10 @@ export default class SentenceBuilder {
             this.verb.addObject(this.obj);
         }
 
+        if (!("subject" in this)) {
+            // To Do
+        }
+
         let sentence = new Sentence(this.verb, this.subject);
 
         return sentence;
