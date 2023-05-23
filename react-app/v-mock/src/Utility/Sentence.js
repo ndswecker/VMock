@@ -6,6 +6,7 @@ const SUBJECT = "SUBJECT";
 
 export default class Sentence {
     verbCollection;
+    subjectObjectType;
 
     constructor(verb) {
         this.verbCollection = new WordVerbCollection();
@@ -14,6 +15,25 @@ export default class Sentence {
 
     addVerb(verb) {
         this.verbCollection.addVerb(verb);
+    }
+
+    collectSimilarSubjects(index) {
+        let nextIndex = index + 1;
+        let currentSubject = this.verbCollection.getVerb(index).getSubject();
+        let subjectCollate = currentSubject;
+
+        while (index < this.verbCollection.size()) {
+            let nextSubject = this.verbCollection.getVerb(nextIndex).getSubject();
+            if (currentSubject === nextSubject) {
+                currentSubject = nextSubject;
+                index++;
+            } else {
+                break;
+            }
+            
+        }
+
+        return subjectCollate;
     }
 
     toString() {
@@ -36,9 +56,10 @@ export default class Sentence {
 
                 // Middle verbs
                 if (v != this.verbCollection.size() - 1) {
+                    console.log(`${this.verbCollection.getVerb(v).getSubject()} vs ${this.verbCollection.getVerb(v+1).getSubject()}`);
+
                     text += ` ${this.verbCollection.getJoiner()}`;
                 }
-                
             }
         }
 

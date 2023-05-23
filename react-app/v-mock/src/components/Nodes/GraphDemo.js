@@ -43,10 +43,10 @@ export default function GraphDemo() {
         hid.addObject(money);
         hid.addSubject(her);
         
-        kill.addSubject(him);
+        kill.addSubject([him, jose]);
         kill.addObject(bitches);
 
-        lick.addSubject(jose);
+        lick.addSubject([him, jose]);
         lick.addObject(drugs);
 
         let phrase = new SentenceBuilder()
@@ -56,8 +56,10 @@ export default function GraphDemo() {
         phrase.addVerb(lick);
 
         console.log(phrase);
-        console.log(phrase.verbCollection.isAllSubjectsSame());
+        // console.log(phrase.verbCollection.isAllSubjectsSame());
         console.log(phrase.toString());
+        console.log(phrase.collectSimilarSubjects(1));
+        // console.log(phrase.verbCollection.getVerb(0).getSubject());
 
     }
 

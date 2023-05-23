@@ -46,7 +46,7 @@ export default class WordVerbCollection {
             let nextSubjectList = this.verbs[v].getSubject();
             
             if (startingSubjectList != nextSubjectList) {
-                console.log(`${startingSubjectList} != ${nextSubjectList}`);
+                // console.log(`${startingSubjectList} != ${nextSubjectList}`);
                 return false;
             } else {
                 console.log(`${startingSubjectList} === ${nextSubjectList}`);
