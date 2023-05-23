@@ -41,12 +41,12 @@ export default function GraphDemo() {
 
         // Link Subject and Objects with the Verb
         hid.addObject(money);
-        hid.addSubject(her);
+        hid.addSubject([her, jose]);
         
         kill.addSubject([him, jose]);
         kill.addObject(bitches);
 
-        lick.addSubject([him, jose]);
+        lick.addSubject([him, jose, her]);
         lick.addObject(drugs);
 
         let phrase = new SentenceBuilder()

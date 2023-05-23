@@ -48,11 +48,13 @@ export default class Sentence {
                 let prevSubject;
                 let currentSubject = this.verbCollection.getVerb(v).getSubject();
                 
+                // all verbs except the first
                 if (v != 0) {
                     // Non starting verbs spacer
                     text += " ";
                     prevSubject = this.verbCollection.getVerb(v-1).getSubject();
 
+                    // Do not repeat subject if it is the same as the last verb's subject
                     if (prevSubject === currentSubject) {
                         console.log("Matching subject from previous verb");
                         // skip the additon of the subject
@@ -62,17 +64,14 @@ export default class Sentence {
                         text += this.verbCollection.getVerb(v).getSubject();
                         text += ` ${this.verbCollection.getVerb(v).toString()}`;
                     }
-                    
+                // handle the first verb  
                 } else {
                     text += this.verbCollection.getVerb(v).getSubject();
                     text += ` ${this.verbCollection.getVerb(v).toString()}`;
                 }
-                
 
                 // Middle verbs
                 if (v != this.verbCollection.size() - 1) {
-                    console.log(`${this.verbCollection.getVerb(v).getSubject()} vs ${this.verbCollection.getVerb(v+1).getSubject()}`);
-
                     text += ` ${this.verbCollection.getJoiner()}`;
                 }
             }
