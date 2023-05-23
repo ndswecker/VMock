@@ -81,11 +81,23 @@ export default class WordVerb extends WordNode {
     
 
     addObject(object) {
-        this.objectCollection.addObject(object);
+        if (Array.isArray(object)) {
+            for (let b = 0; b < object.length; b++) {
+                this.objectCollection.addObject(object[b]);
+            }
+        } else {
+            this.objectCollection.addObject(object);
+        }
     }
 
     addSubject(subject) {
-        this.subjectCollection.addSubject(subject);
+        if (Array.isArray(subject)) {
+            for (let s = 0; s < subject.length; s++) {
+                this.subjectCollection.addSubject(subject[s]);
+            }
+        } else {
+            this.subjectCollection.addSubject(subject);
+        }
     }
 
     getSubject() {

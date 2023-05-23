@@ -37,16 +37,13 @@ export default function GraphDemo() {
         let money = new ObjectBuilder("the money").build();
 
         // Link Subject and Objects with the Verb
-        hid.addObject(money);
-        // hid.addSubject(him);
+        hid.addObject([money, bitches]);
+        hid.addSubject([him, her]);
         // kill.addObject(bitches);
 
         let phrase = new SentenceBuilder()
-            .setSubject(him)
-            .setVerb(kill)
-            .setObject(bitches)
+            .setVerb(hid)
             .build();
-        phrase.addVerb(hid, him);
         
         console.log(phrase);
         console.log(phrase.verbCollection.isAllSubjectsSame());
