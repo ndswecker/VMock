@@ -19,13 +19,16 @@ export default class WordVerbCollection {
         }
     }
 
-    getVerb(word) {
-        this.verbs.forEach(verb => {
-            if (verb.getValue() === word) {
-                return verb;
-            }
-        });
-        return false;
+    getVerb(index) {
+        return this.verbs[index];
+    }
+
+    getFirst() {
+        return this.verbs[0];
+    }
+
+    getJoiner() {
+        return this.joiner;
     }
 
     size() {

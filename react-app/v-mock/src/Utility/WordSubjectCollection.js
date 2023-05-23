@@ -20,7 +20,7 @@ export default class WordSubjectCollection {
         }
     }
 
-    listSubjects() {
+    toString() {
         let text = "";
         for (let i = 0; i < this.subjects.length; i++) {
             if (i != 0) {text += " ";}

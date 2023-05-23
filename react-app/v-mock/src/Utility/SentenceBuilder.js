@@ -8,16 +8,6 @@ export default class SentenceBuilder {
         this.verb = null;
     }
 
-    // setObject(obj) {
-    //     this.obj = obj;
-    //     return this;
-    // }
-
-    // setSubject(subject) {
-    //     this.subject = subject;
-    //     return this;
-    // }
-
     setVerb(verb) {
         this.verb = verb;
         return this;

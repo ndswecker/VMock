@@ -12,23 +12,36 @@ export default class Sentence {
         this.verbCollection.addVerb(verb);
     }
 
-    addVerb(verb, subject) {
+    addVerb(verb) {
         this.verbCollection.addVerb(verb);
-        verb.addSubject(subject);
-    }
-
-    addSubject(verb, subject) {
-        verb.addSubject(subject);
-    }
-
-    addObject(object, verb) {
-        this.verbCollection.addObject(object);
     }
 
     toString() {
-        let subject;
-        for (let i = 0; i < this.verbCollection.size(); i++) {
-            //To Do
+        let text = "";
+        if (this.verbCollection.isAllSubjectsSame()) {
+            text += this.verbCollection.getVerb(0).getSubject();
+            text += ` ${this.verbCollection.toString()}`;
+        } else {
+            // Get each verbs separately
+            for (let v = 0; v < this.verbCollection.size(); v++) {
+
+                // Non starting verbs spacer
+                if (v != 0) {
+                    text += " ";
+                }
+
+                let verb = this.verbCollection.getVerb(v);
+                text += verb.getSubject();
+                text += ` ${verb.toString()}`;
+
+                // Middle verbs
+                if (v != this.verbCollection.size() - 1) {
+                    text += ` ${this.verbCollection.getJoiner()}`;
+                }
+                
+            }
         }
+
+        return text;
     }
 }

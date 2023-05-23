@@ -29,24 +29,35 @@ export default function GraphDemo() {
     function makeWord(){
         let him = new SubjectBuilder("Justin").build();
         let her = new SubjectBuilder("Phylis").build();
+        let jose = new SubjectBuilder("Jose").build();
 
         let kill = new VerbBuilder("killed").build();
         let hid = new VerbBuilder("hid").build();
+        let lick = new VerbBuilder("licked").build();
 
         let bitches = new ObjectBuilder("the bitches").setIsDirect(true).build();
         let money = new ObjectBuilder("the money").build();
+        let drugs = new ObjectBuilder("the drugs").build();
 
         // Link Subject and Objects with the Verb
-        hid.addObject([money, bitches]);
-        hid.addSubject([him, her]);
-        // kill.addObject(bitches);
+        hid.addObject(money);
+        hid.addSubject(her);
+        
+        kill.addSubject(him);
+        kill.addObject(bitches);
+
+        lick.addSubject(jose);
+        lick.addObject(drugs);
 
         let phrase = new SentenceBuilder()
             .setVerb(hid)
             .build();
-        
+        phrase.addVerb(kill);
+        phrase.addVerb(lick);
+
         console.log(phrase);
         console.log(phrase.verbCollection.isAllSubjectsSame());
+        console.log(phrase.toString());
 
     }
 

@@ -101,7 +101,7 @@ export default class WordVerb extends WordNode {
     }
 
     getSubject() {
-        return this.subjectCollection.listSubjects();
+        return this.subjectCollection.toString();
     }
 
     toString() {
